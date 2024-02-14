@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://chwk4j82ps6it"]
+
+[ext_resource type="Script" path="res://Assets/tank.gd" id="1_b21hq"]
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_b21hq")
+speed = 100
+
+[node name="Body" type="Sprite2D" parent="."]
+
+[node name="Turret" type="Sprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
