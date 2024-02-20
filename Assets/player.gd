@@ -4,15 +4,18 @@ func turret_rotate(delta):
 	pass
 	
 func player_input(delta):
-	velocity = Vector2(0,0).rotated(rotation_speed)
-	if Input.is_action_pressed('forward'):
-		velocity = Vector2(0, -speed)
-	if Input.is_action_pressed('back'):
-		velocity = Vector2(0, speed)
-	if Input.is_action_pressed('turn_right'):
-		velocity = Vector2(speed, 0)
-	if Input.is_action_pressed('turn_left'):
-		velocity = Vector2(-speed, 0)
+	velocity = Vector2(0,0)
+	var x = 0
+	var y = 0
+	if Input.is_action_pressed('up'):
+		y -= speed
+	if Input.is_action_pressed('down'):
+		y += speed
+	if Input.is_action_pressed('right'):
+		x += speed
+	if Input.is_action_pressed('left'):
+		x -= speed
+	velocity = Vector2(x, y)
 	
 	if Input.is_action_pressed('turret_turn'):
 		$Turret.rotate(-0.1)
