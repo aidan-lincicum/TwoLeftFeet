@@ -10,7 +10,7 @@ size = Vector2(8, 6)
 [node name="Player_Bullet" instance=ExtResource("1_g3nli")]
 script = ExtResource("2_yngh0")
 speed = 500
-timer = 0.5
+timer = 1.0
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(1.07417, 0.924242)
