@@ -8,14 +8,14 @@ func player_input(delta):
 	var x = 0
 	var y = 0
 	if Input.is_action_pressed('up'):
-		y -= speed
+		y -= 1
 	if Input.is_action_pressed('down'):
-		y += speed
+		y += 1
 	if Input.is_action_pressed('right'):
-		x += speed
+		x += 1
 	if Input.is_action_pressed('left'):
-		x -= speed
-	velocity = Vector2(x, y)
+		x -= 1
+	velocity = Vector2(x, y).normalized() * speed
 	
 	if Input.is_action_pressed('turret_turn'):
 		$Turret.rotate(-0.1)
