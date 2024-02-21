@@ -15,7 +15,7 @@ script = ExtResource("2_vcypm")
 speed = 150
 rotation_speed = 1.0
 bullet = ExtResource("3_bw4m8")
-turret_cd = 1.0
+turret_cd = 0.5
 
 [node name="Body" parent="." index="0"]
 position = Vector2(0.999994, 0)

@@ -5,14 +5,14 @@ extends Area2D
 
 var velocity = Vector2()
 
-func start(_position, _dir):
+func start(_position, _direction):
 	position = _position
-	rotation = _dir.angle()
+	rotation = _direction.angle()
 	$Timer.wait_time = timer
-	velocity = _dir * speed
+	velocity = _direction * speed
 	
 func _process(delta):
-	position = velocity * delta
+	position += velocity * delta
 
 func _on_Timer_timeout():
 	queue_free()

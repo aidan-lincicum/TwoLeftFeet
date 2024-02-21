@@ -21,4 +21,4 @@ func player_input(delta):
 		$Turret.rotate(-0.1)
 		
 	if Input.is_action_just_pressed('shoot'):
-		shot()
+		shoot()
