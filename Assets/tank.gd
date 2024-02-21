@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @export var speed: int
 @export var rotation_speed: float
+@export var bullet : PackedScene
+@export var turret_cd: float
+
+signal shoot
+var cd = false 
 
 func player_input(delta):
 	pass
@@ -9,3 +14,16 @@ func player_input(delta):
 func _physics_process(delta):
 	player_input(delta)
 	move_and_slide()
+
+func _ready():
+	$Timer.wait_time = turret_cd
+
+func _on_Timer_timeout():
+	cd = false
+
+func shot():
+	if not cd:
+		cd = true
+		$Timer.start()
+		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
+		emit_signal('shoot', bullet, $Turret/Gun.global_position, dir)

@@ -10,4 +10,8 @@ speed = 100
 
 [node name="Turret" type="Sprite2D" parent="."]
 
+[node name="Gun" type="Marker2D" parent="Turret"]
+
 [node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1r2x6pyr8fep"
-path="res://.godot/imported/rudiementary tank.png-b413bc7b78f8c4ec9aae181cad04a06e.ctex"
+uid="uid://dp2n71ykha83k"
+path="res://.godot/imported/rudimentary bullet.png-d668e82edae92a23082d40fa7313d174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rudiementary tank.png"
-dest_files=["res://.godot/imported/rudiementary tank.png-b413bc7b78f8c4ec9aae181cad04a06e.ctex"]
+source_file="res://Assets/Player/rudimentary bullet.png"
+dest_files=["res://.godot/imported/rudimentary bullet.png-d668e82edae92a23082d40fa7313d174.ctex"]
 
 [params]
 

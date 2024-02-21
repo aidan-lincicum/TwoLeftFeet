@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfjeta5ctad2t"
-path="res://.godot/imported/rudimentary turret.png-0b03a9c2fa51731271c176ba4885b20b.ctex"
+uid="uid://c1r2x6pyr8fep"
+path="res://.godot/imported/rudiementary tank.png-7d9212f65be961eb378a6874f459ee21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rudimentary turret.png"
-dest_files=["res://.godot/imported/rudimentary turret.png-0b03a9c2fa51731271c176ba4885b20b.ctex"]
+source_file="res://Assets/Player/rudiementary tank.png"
+dest_files=["res://.godot/imported/rudiementary tank.png-7d9212f65be961eb378a6874f459ee21.ctex"]
 
 [params]
 
