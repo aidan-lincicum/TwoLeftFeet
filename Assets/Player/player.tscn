@@ -34,5 +34,3 @@ position = Vector2(170, 0)
 
 [node name="Collision" parent="." index="2"]
 shape = SubResource("RectangleShape2D_6iy3m")
-
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
