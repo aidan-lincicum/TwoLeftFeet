@@ -16,3 +16,17 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	queue_free()
+	
+func _on_body_entered(area):
+	if area.name.begins_with("Player"):
+		queue_free()
+	#if area.name == "StaticBody2D":
+		#ricochet()
+
+#want to add function for hit
+
+#func ricochet():
+
+ 
+
+

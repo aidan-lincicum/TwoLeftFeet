@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cfjeta5ctad2t" path="res://Assets/Player/rudimentary turret.png" id="5_7uwx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iy3m"]
-size = Vector2(81.5, 82)
+size = Vector2(72, 73)
 
 [node name="Player" instance=ExtResource("1_krmh1")]
 collision_layer = 2
+collision_mask = 7
 script = ExtResource("2_vcypm")
 speed = 150
 rotation_speed = 1.0
@@ -23,9 +24,9 @@ scale = Vector2(0.366516, 0.686992)
 texture = ExtResource("4_8p3mh")
 
 [node name="Turret" parent="." index="1"]
-position = Vector2(0.999998, 0)
+position = Vector2(1.59542, 0.000321612)
 rotation = 0.000540144
-scale = Vector2(0.445299, 0.659476)
+scale = Vector2(0.473652, 0.659476)
 texture = ExtResource("5_7uwx6")
 offset = Vector2(70, 0)
 
@@ -33,5 +34,5 @@ offset = Vector2(70, 0)
 position = Vector2(170, 0)
 
 [node name="Collision" parent="." index="2"]
-position = Vector2(1, 0)
+position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_6iy3m")
