@@ -20,9 +20,12 @@ func _process(delta):
 	
 	if collision:
 		var collider = collision.get_collider()
+		print(collider.get("name"))
 		if collider.get("name").begins_with("Player"):
 			hit(collider)
-		else:
+		else: if collider.get("name").begins_with("p_bullet"):
+			queue_free()
+		else: if collider.get("name").begins_with("Static"):
 			ricochet(collision)
 
 

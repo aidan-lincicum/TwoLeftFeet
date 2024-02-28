@@ -6,12 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvcsj"]
 size = Vector2(8, 6)
 
-[node name="Player_Bullet" type="CharacterBody2D"]
+[node name="p_bullet" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("2_yngh0")
 speed = 500
-timer = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
