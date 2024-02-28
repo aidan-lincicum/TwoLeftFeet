@@ -11,7 +11,7 @@ collision_layer = 4
 collision_mask = 7
 script = ExtResource("2_366ak")
 speed = 500
-timer = 1.0
+timer = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.07417, 0.924242)

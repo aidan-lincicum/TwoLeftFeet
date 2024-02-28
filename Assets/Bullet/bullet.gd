@@ -3,12 +3,10 @@ extends CharacterBody2D
 @export var speed : int
 @export var timer : float
 
-#var velocity = Vector2()
-
 func start(_position, _direction):
 	position = _position
 	rotation = _direction.angle()
-	$Timer.wait_time = Timer
+	$Timer.wait_time = timer
 	velocity = _direction * speed
 	var timer = get_node("Timer")
 	timer.timeout.connect(on_timer_timeout)
@@ -21,26 +19,22 @@ func _process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	
 	if collision:
-		var colliding_name = collision.get_collider().get("name")
-		if colliding_name.begins_with("Player"):
-			hit() 
+		var collider = collision.get_collider()
+		if collider.get("name").begins_with("Player"):
+			hit(collider)
 		else:
-			var reflect = collision.get_remainder().bounce(collision.get_normal())
-			velocity = velocity.bounce(collision.get_normal())
-			move_and_collide(reflect)
+			ricochet(collision)
 
 
-	
-func hit():
+func hit(collider):
+	collider.is_hit()
 	queue_free()
-#func _on_body_entered(area):
 	
-	#if area.name == "StaticBody2D":
-		#ricochet()
+func ricochet(collision):
+	var reflect = collision.get_remainder().bounce(collision.get_normal())
+	velocity = velocity.bounce(collision.get_normal())
+	move_and_collide(reflect)
 
-#want to add function for hit
-
-#func ricochet():
 
  
 
