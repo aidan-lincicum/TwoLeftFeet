@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnwql2lu1uavb"]
+[gd_scene load_steps=4 format=3 uid="uid://cnwql2lu1uavb"]
 
-[ext_resource type="PackedScene" uid="uid://cahma67a4kvud" path="res://Assets/Bullet/bullet.tscn" id="1_ytgxk"]
 [ext_resource type="Script" path="res://Assets/Player/player_bullet.gd" id="2_366ak"]
 [ext_resource type="Texture2D" uid="uid://dp2n71ykha83k" path="res://Assets/Player/rudimentary bullet.png" id="3_17ls2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvcsj"]
 size = Vector2(8, 6)
 
-[node name="Player2_Bullet" instance=ExtResource("1_ytgxk")]
+[node name="Player2_Bullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("2_366ak")
 speed = 500
 timer = 1.0
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.07417, 0.924242)
 texture = ExtResource("3_17ls2")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_jvcsj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
