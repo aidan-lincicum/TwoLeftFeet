@@ -6,8 +6,11 @@ extends CharacterBody2D
 @export var turret_cd: float
 
 signal trigger
+signal hit(hearts)
 
-var alive = true
+# var alive = true
+var max_hearts = 3
+var hearts = max_hearts
 var cd = false 
 
 func player_input(delta):
@@ -21,7 +24,11 @@ func shoot():
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir)
 
 func is_hit():
-	queue_free()
+	hearts -= 1
+	emit_signal("hit", hearts)
+	if hearts <= 0:
+		# alive = false
+		queue_free()
 
 func _physics_process(delta):
 	player_input(delta)
