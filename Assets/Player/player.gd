@@ -18,7 +18,7 @@ func player_input(delta):
 	velocity = Vector2(x, y).normalized() * speed
 	
 	if Input.is_action_pressed('turret_turn'):
-		$Turret.rotate(-0.1)
+		$Turret.rotate(rotation_speed)
 		
 	if Input.is_action_just_pressed('shoot'):
 		shoot()

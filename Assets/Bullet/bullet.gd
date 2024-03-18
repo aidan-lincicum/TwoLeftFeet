@@ -25,6 +25,7 @@ func _process(delta):
 			hit(collider)
 		else: if collider.get("name").begins_with("p_bullet"):
 			queue_free()
+			collider.queue_free()
 		else: if collider.get("name").begins_with("Static"):
 			ricochet(collision)
 

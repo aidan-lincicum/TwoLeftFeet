@@ -13,8 +13,6 @@ size = Vector2(72, 73)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("2_vcypm")
-speed = 150
-rotation_speed = 1.0
 bullet = ExtResource("3_bw4m8")
 turret_cd = 0.5
 
