@@ -18,5 +18,5 @@ scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_j6usv")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
