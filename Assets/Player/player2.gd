@@ -21,5 +21,5 @@ func player_input(delta):
 	if Input.is_action_pressed('turret_turn2'):
 		$Turret.rotate(rotation_speed)
 		
-	if Input.is_action_just_pressed('shoot2'):
+	if Input.is_action_pressed('shoot2'):
 		shoot()
