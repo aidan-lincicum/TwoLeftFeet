@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var bullet : PackedScene
 @export var turret_cd: float
 
+
 signal trigger
 signal hit(hearts)
 
@@ -39,3 +40,24 @@ func _ready():
 
 func _on_Reload_timeout():
 	cd = false
+	
+func get_power_up(var_change,var_type):
+	$powerUpLength.start()
+	if(var_type == "speed"):
+		speed = var_change
+	if(var_type == "turret_cd"):
+		$Reload.wait_time = var_change
+	if(var_type == "max_hearts"):
+		max_hearts = var_change
+	#if(var_type == "bullet_speed"):
+		#bullet = var_change
+		#how to change bullet speed??
+	
+func set_default_stats():
+	speed = 150
+	$Reload.wait_time = 0.5
+
+func _on_power_up_length_timeout():
+	
+	set_default_stats()
+	pass # Replace with function body.
