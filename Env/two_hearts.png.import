@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pwaere83xx4v"
-path="res://.godot/imported/green heart.png-901a909220e8439657aadbc7c1087ee5.ctex"
+uid="uid://cdrmet0q3glld"
+path="res://.godot/imported/two_hearts.png-66df680374da3a7128b89841a48b0a8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/green heart.png"
-dest_files=["res://.godot/imported/green heart.png-901a909220e8439657aadbc7c1087ee5.ctex"]
+source_file="res://Env/two_hearts.png"
+dest_files=["res://.godot/imported/two_hearts.png-66df680374da3a7128b89841a48b0a8b.ctex"]
 
 [params]
 

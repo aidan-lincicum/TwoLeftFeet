@@ -35,3 +35,4 @@ func spawn_power_up():
 func _on_power_up_timer_timeout():
 	spawn_power_up()
 	power_timer_is_running = false
+
