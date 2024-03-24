@@ -6,3 +6,5 @@ func _ready():
 
 func _on_Player1_hit(hearts):
 	set_frame(hearts)
+	if(hearts == 0):
+		get_tree().change_scene_to_file("res://Env/restart.tscn")
