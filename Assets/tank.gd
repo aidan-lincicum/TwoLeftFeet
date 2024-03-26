@@ -10,9 +10,13 @@ signal trigger
 signal hit(hearts)
 
 # var alive = true
+var rng = RandomNumberGenerator.new()
 var max_hearts = 3
 var hearts = max_hearts
 var cd = false 
+var type_of_tank = "not assigned"
+var bullet_speed = 0
+var bullet_damage = 0
 
 func player_input(delta):
 	pass
@@ -22,11 +26,13 @@ func shoot():
 		cd = true
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
-		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir)
+		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage)
+		
 
-func is_hit():
-	hearts -= 1
+func is_hit(damage):
+	hearts -= damage
 	emit_signal("hit", hearts)
+	print(hearts)
 	if hearts <= 0:
 		# alive = false
 		queue_free()
@@ -36,7 +42,49 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _ready():
-	$Reload.wait_time = turret_cd
+	var my_random_number = rng.randi_range(1, 3)
+	if(my_random_number == 1):
+		type_of_tank = "assassin"
+	elif(my_random_number == 2):
+		type_of_tank = "assassin"
+	elif(my_random_number == 3):
+		type_of_tank = "assassin"
+	elif(my_random_number == 4):
+		type_of_tank = "assassin"
+	set_class_type(type_of_tank)
+
+func set_class_type(type): 
+	print(type)
+	if(type == "sniper"):
+		max_hearts = 100
+		hearts = max_hearts
+		$Reload.wait_time = 5
+		speed = 300
+		bullet_speed = 1000
+		bullet_damage = 75
+	elif(type == "assassin"):
+		max_hearts = 100
+		hearts = max_hearts
+		$Reload.wait_time = 0.1
+		speed = 600
+		bullet_speed = 800
+		bullet_damage = 10
+	elif(type == "balanced"):
+		max_hearts = 100
+		hearts = max_hearts
+		$Reload.wait_time = 0.5
+		speed = 300
+		bullet_speed = 400
+		bullet_damage = 34
+	elif(type == "heavy"):
+		max_hearts = 200
+		hearts = max_hearts
+		$Reload.wait_time = 2
+		speed = 200
+		bullet_speed = 400
+		bullet_damage = 34
+
+
 
 func _on_Reload_timeout():
 	cd = false
@@ -54,8 +102,7 @@ func get_power_up(var_change,var_type):
 		#how to change bullet speed??
 	
 func set_default_stats():
-	speed = 500
-	$Reload.wait_time = 0.5
+	set_class_type(type_of_tank)
 
 func _on_power_up_length_timeout():
 	

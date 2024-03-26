@@ -7,10 +7,10 @@ var rng = RandomNumberGenerator.new()
 var power_up_x_position
 var power_up_y_position
 
-func _on_Tank_shoot(bullet, _position, _direction):
+func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage):
 	var b = bullet.instantiate()
 	add_child(b)
-	b.start(_position, _direction)
+	b.start(_position, _direction,_speed,_damage)
 
 func _process(delta):
 	if(!power_timer_is_running):

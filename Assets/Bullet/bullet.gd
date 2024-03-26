@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 @export var speed : int
-@export var timer : float # timer time is in p_bullet timer wait
+@export var timer : float # timer time is in p_bullet timer wait time variable 
+@export var damage : int
 
-func start(_position, _direction):
+func start(_position, _direction,_speed,_damage):
 	position = _position
 	rotation = _direction.angle()
+	damage = _damage
 	$Timer.wait_time = timer
-	velocity = _direction * speed
+	velocity = _direction * _speed
 	$Timer.timeout.connect(on_timer_timeout)
 	
 
@@ -19,7 +21,6 @@ func _process(delta):
 	
 	if collision:
 		var collider = collision.get_collider()
-		print(collider.get("name"))
 		if collider.get("name").begins_with("Player"):
 			hit(collider)
 		else: if collider.get("name").begins_with("p_bullet"):
@@ -30,15 +31,10 @@ func _process(delta):
 
 
 func hit(collider):
-	collider.is_hit()
+	collider.is_hit(damage)
 	queue_free()
 	
 func ricochet(collision):
 	var reflect = collision.get_remainder().bounce(collision.get_normal())
 	velocity = velocity.bounce(collision.get_normal())
 	move_and_collide(reflect)
-
-
- 
-
-
