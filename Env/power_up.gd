@@ -21,7 +21,8 @@ func _on_body_entered(area):
 		if(my_random_number == 3):
 			area.get_power_up(3,"max_hearts")
 		queue_free()
-	#if area.name == "StaticBody2D":
+	if area.name.begins_with("StaticBody2D"):
+		queue_free()
 		#ricochet()
 
 	
