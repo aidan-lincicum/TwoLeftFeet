@@ -18,7 +18,7 @@ var type_of_tank = "not assigned"
 var bullet_speed = 0
 var bullet_damage = 0
 
-func player_input(delta):
+func player_input(_delta):
 	pass
 	
 func shoot():
@@ -32,7 +32,6 @@ func shoot():
 func is_hit(damage):
 	hearts -= damage
 	emit_signal("hit", hearts)
-	print(hearts)
 	if hearts <= 0:
 		# alive = false
 		queue_free()
@@ -44,17 +43,17 @@ func _physics_process(delta):
 func _ready():
 	var my_random_number = rng.randi_range(1, 3)
 	if(my_random_number == 1):
-		type_of_tank = "assassin"
+		type_of_tank = "sniper"
 	elif(my_random_number == 2):
 		type_of_tank = "assassin"
 	elif(my_random_number == 3):
-		type_of_tank = "assassin"
+		type_of_tank = "heavy"
 	elif(my_random_number == 4):
-		type_of_tank = "assassin"
+		type_of_tank = "balanced"
 	set_class_type(type_of_tank)
 
 func set_class_type(type): 
-	print(type)
+	print(type_of_tank)
 	if(type == "sniper"):
 		max_hearts = 100
 		hearts = max_hearts

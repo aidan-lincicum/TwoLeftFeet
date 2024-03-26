@@ -6,7 +6,7 @@ func _ready():
 
 func _on_Player1_hit(hearts):
 	set_frame(hearts)
-	if(hearts == 0):
+	if(hearts <= 0):
 		var root_node = get_tree().root
 		var scene_node = root_node.get_node("Env")
 		scene_node.queue_free()
