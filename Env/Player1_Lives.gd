@@ -7,4 +7,10 @@ func _ready():
 func _on_Player1_hit(hearts):
 	set_frame(hearts)
 	if(hearts == 0):
-		get_tree().change_scene_to_file("res://Env/restart.tscn")
+		var root_node = get_tree().root
+		var scene_node = root_node.get_node("Env")
+		scene_node.queue_free()
+		
+		var new_scene = load("res://Env/restart.tscn").instantiate()
+		root_node.add_child(new_scene)
+		new_scene.set_win("Player 2")
