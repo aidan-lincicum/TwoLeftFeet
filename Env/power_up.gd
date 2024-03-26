@@ -23,6 +23,8 @@ func _on_body_entered(area):
 		queue_free()
 	if area.name.begins_with("StaticBody2D"):
 		queue_free()
+	if area.name.begins_with("power_up"):
+		queue_free()
 		#ricochet()
 
 	
