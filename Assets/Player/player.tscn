@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfjeta5ctad2t" path="res://Assets/Player/rudimentary turret.png" id="5_7uwx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iy3m"]
-size = Vector2(72, 73)
+size = Vector2(76.5, 77)
 
 [node name="Player" instance=ExtResource("1_krmh1")]
 collision_layer = 2
@@ -33,5 +33,5 @@ offset = Vector2(70, 0)
 position = Vector2(170, 0)
 
 [node name="Collision" parent="." index="2"]
-position = Vector2(2, -0.5)
+position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_6iy3m")

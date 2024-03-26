@@ -28,8 +28,8 @@ func makeTimer(amount_time):
 func spawn_power_up():
 	var power_up_instance = power_up.instantiate()
 	add_child(power_up_instance)
-	power_up_x_position = rng.randf_range(-500,500)
-	power_up_y_position = rng.randf_range(-350,350)
+	power_up_x_position = rng.randf_range(-1700,1700)
+	power_up_y_position = rng.randf_range(-1620,1620)
 	power_up_instance.position = Vector2(power_up_x_position,power_up_y_position)
 	
 func _on_power_up_timer_timeout():

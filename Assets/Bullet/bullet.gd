@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
 @export var speed : int
-@export var timer : float
+@export var timer : float # timer time is in p_bullet timer wait time variable 
 
 func start(_position, _direction):
 	position = _position
 	rotation = _direction.angle()
 	$Timer.wait_time = timer
 	velocity = _direction * speed
-	var timer = get_node("Timer")
-	timer.timeout.connect(on_timer_timeout)
+	$Timer.timeout.connect(on_timer_timeout)
 	
 
 func on_timer_timeout():

@@ -15,7 +15,7 @@ func _on_body_entered(area):
 	if area.name.begins_with("Player"):
 		var my_random_number = rng.randi_range(1, 3)
 		if(my_random_number == 1):
-			area.get_power_up(500,"speed")
+			area.get_power_up(800,"speed")
 		if(my_random_number == 2):
 			area.get_power_up(0.1,"turret_cd")
 		if(my_random_number == 3):

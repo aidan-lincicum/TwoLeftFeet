@@ -54,7 +54,7 @@ func get_power_up(var_change,var_type):
 		#how to change bullet speed??
 	
 func set_default_stats():
-	speed = 150
+	speed = 500
 	$Reload.wait_time = 0.5
 
 func _on_power_up_length_timeout():
