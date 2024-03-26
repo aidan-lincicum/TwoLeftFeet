@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : int
-@export var timer : float # timer time is in p_bullet timer wait time variable 
+@export var timer : float # timer time is in p_bullet timer wait
 
 func start(_position, _direction):
 	position = _position
