@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Env/restart.gd" id="1_bg61h"]
 
-[node name="Control" type="Control"]
+[node name="Restart Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
