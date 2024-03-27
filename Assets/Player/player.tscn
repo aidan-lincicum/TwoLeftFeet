@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b72w3two6ky4j" path="res://Assets/orangeturret.png" id="5_dbj1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iy3m"]
-size = Vector2(76.5, 77)
+size = Vector2(100, 99.5)
 
 [node name="Player" instance=ExtResource("1_krmh1")]
 collision_layer = 2
@@ -18,20 +18,22 @@ bullet = ExtResource("3_bw4m8")
 turret_cd = 0.5
 
 [node name="Body" parent="." index="0"]
+clip_children = 2
 position = Vector2(0, -3.12924e-06)
-scale = Vector2(0.076, 0.078)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_oa7bn")
 
 [node name="Turret" parent="." index="1"]
-position = Vector2(1.72838, 0.000933576)
+position = Vector2(1.2598, 0.000680474)
 rotation = 0.000540144
-scale = Vector2(0.0270424, 0.0138866)
+scale = Vector2(0.0622486, 0.0450415)
 texture = ExtResource("5_dbj1t")
-offset = Vector2(1000, 2.08165e-12)
+offset = Vector2(1500, 2.08165e-12)
 
 [node name="Gun" parent="Turret" index="0"]
 position = Vector2(2500, 2.08165e-12)
 
 [node name="Collision" parent="." index="2"]
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(0, 2.08165e-12)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6iy3m")
