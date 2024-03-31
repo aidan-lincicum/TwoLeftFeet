@@ -58,29 +58,29 @@ func set_class_type(type):
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 5
-		speed = 300
-		bullet_speed = 1000
+		speed = 500
+		bullet_speed = 1500
 		bullet_damage = 75
 	elif(type == "assassin"):
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 0.1
-		speed = 600
-		bullet_speed = 800
+		speed = 1000
+		bullet_speed = 1200
 		bullet_damage = 10
 	elif(type == "balanced"):
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 0.5
-		speed = 300
-		bullet_speed = 400
+		speed = 500
+		bullet_speed = 700
 		bullet_damage = 34
 	elif(type == "heavy"):
 		max_hearts = 200
 		hearts = max_hearts
 		$Reload.wait_time = 2
-		speed = 200
-		bullet_speed = 400
+		speed = 400
+		bullet_speed = 600
 		bullet_damage = 34
 
 
