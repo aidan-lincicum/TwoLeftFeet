@@ -50,5 +50,59 @@ theme_override_font_sizes/font_size = 100
 text = "Quit
 "
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="LeftP1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "<"
+
+[node name="p1Class" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Select a Class[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="RightP1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = ">"
+
+[node name="LeftP2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "<"
+
+[node name="p2Class" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Select a Class[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="RightP2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = ">"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/LeftP1" to="." method="_on_left_p_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/RightP1" to="." method="_on_right_p_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/LeftP2" to="." method="_on_left_p_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/RightP2" to="." method="_on_right_p_2_pressed"]

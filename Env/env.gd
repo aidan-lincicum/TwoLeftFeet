@@ -35,4 +35,9 @@ func spawn_power_up():
 func _on_power_up_timer_timeout():
 	spawn_power_up()
 	power_timer_is_running = false
+	
+func set_player_classes(player1, player2):
+	#Quinn add something here please
+	print(player1)
+	print(player2)
 
