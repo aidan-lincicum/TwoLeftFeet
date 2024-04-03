@@ -1,6 +1,6 @@
 extends Control
 
-var classArray = ["Balanced", "Sniper", "Assasin", "Heavy"] #Holds the names of player classes
+var classArray = ["Balanced", "Sniper", "Assassin", "Heavy"] #Holds the names of player classes
 var p1Pointer = -1 # Index of the selected player class for player 1
 var p2Pointer = -1 # Index of the selected player class for player 2
 

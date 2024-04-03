@@ -8,7 +8,6 @@ func start(_position, _direction,_speed,_damage):
 	position = _position
 	rotation = _direction.angle()
 	damage = _damage
-	$Timer.wait_time = timer
 	velocity = _direction * _speed
 	$Timer.timeout.connect(on_timer_timeout)
 	

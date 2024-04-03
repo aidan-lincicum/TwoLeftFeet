@@ -12,7 +12,7 @@ func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage):
 	add_child(b)
 	b.start(_position, _direction,_speed,_damage)
 
-func _process(delta):
+func _process(_delta):
 	if(!power_timer_is_running):
 		var my_random_number = rng.randf_range(5, 6)
 		makeTimer(my_random_number)
@@ -37,7 +37,8 @@ func _on_power_up_timer_timeout():
 	power_timer_is_running = false
 	
 func set_player_classes(player1, player2):
-	#Quinn add something here please
 	print(player1)
 	print(player2)
+	$Player1.set_class_type(player1)
+	$Player2.set_class_type(player2)
 

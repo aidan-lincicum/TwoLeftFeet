@@ -25,6 +25,7 @@ func shoot():
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage)
+		$Turret.rotate(rotation_speed * 6)
 		
 
 #Called by bullet when it makes contact with a tank
@@ -35,7 +36,7 @@ func is_hit(damage):
 		# alive = false
 		queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	player_input()
 	move_and_slide()
 

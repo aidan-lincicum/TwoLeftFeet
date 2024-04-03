@@ -3,7 +3,7 @@ extends Area2D
 var rng = RandomNumberGenerator.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func start():
