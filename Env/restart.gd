@@ -11,5 +11,5 @@ func _on_button_pressed():
 		var scene_node = root_node.get_node("Restart Menu")
 		scene_node.queue_free()
 		
-		var new_scene = load("res://Env/env.tscn").instantiate()
+		var new_scene = load("res://Env/main_menu.tscn").instantiate()
 		root_node.add_child(new_scene)
