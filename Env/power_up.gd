@@ -11,7 +11,6 @@ func start():
 	position = Vector2(0,0)
 	
 func _on_body_entered(area):
-	print(area.name)
 	if area.name.begins_with("Player"):
 		var my_random_number = rng.randi_range(1, 3)
 		if(my_random_number == 1):
@@ -25,11 +24,3 @@ func _on_body_entered(area):
 		queue_free()
 	if area.name.begins_with("power_up"):
 		queue_free()
-		#ricochet()
-
-	
-	
-#want to add function for hit
-
-#func ricochet():
-

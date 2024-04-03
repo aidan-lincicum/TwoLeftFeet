@@ -1,9 +1,9 @@
 extends "res://Assets/tank.gd"
 
-func turret_rotate(delta):
+func turret_rotate():
 	pass
 	
-func player_input(delta):
+func player_input():
 	velocity = Vector2(0,0)
 	var x = 0
 	var y = 0
@@ -22,3 +22,4 @@ func player_input(delta):
 		
 	if Input.is_action_pressed('shoot'): 
 		shoot()
+		$Turret.rotate(rotation_speed)

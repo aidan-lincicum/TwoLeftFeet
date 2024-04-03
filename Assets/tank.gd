@@ -5,11 +5,9 @@ extends CharacterBody2D
 @export var bullet : PackedScene
 @export var turret_cd: float
 
-
 signal trigger
 signal hit(hearts)
 
-# var alive = true
 var rng = RandomNumberGenerator.new()
 var max_hearts = 3
 var hearts = max_hearts
@@ -18,7 +16,7 @@ var type_of_tank = "not assigned"
 var bullet_speed = 0
 var bullet_damage = 0
 
-func player_input(_delta):
+func player_input():
 	pass
 	
 func shoot():
@@ -29,6 +27,7 @@ func shoot():
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage)
 		
 
+#Called by bullet when it makes contact with a tank
 func is_hit(damage):
 	hearts -= damage
 	emit_signal("hit", hearts)
@@ -37,54 +36,43 @@ func is_hit(damage):
 		queue_free()
 
 func _physics_process(delta):
-	player_input(delta)
+	player_input()
 	move_and_slide()
 
-func _ready():
-	var my_random_number = rng.randi_range(1, 3)
-	if(my_random_number == 1):
-		type_of_tank = "sniper"
-	elif(my_random_number == 2):
-		type_of_tank = "assassin"
-	elif(my_random_number == 3):
-		type_of_tank = "heavy"
-	elif(my_random_number == 4):
-		type_of_tank = "balanced"
-	set_class_type(type_of_tank)
 
 func set_class_type(type): 
-	print(type_of_tank)
-	if(type == "sniper"):
+	if(type == "Sniper"):
 		max_hearts = 100
 		hearts = max_hearts
-		$Reload.wait_time = 5
+		$Reload.wait_time = 2
 		speed = 500
-		bullet_speed = 1500
+		bullet_speed = 3000
 		bullet_damage = 75
-	elif(type == "assassin"):
+	elif(type == "Assassin"):
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 0.1
-		speed = 1000
-		bullet_speed = 1200
-		bullet_damage = 10
-	elif(type == "balanced"):
+		speed = 1200
+		bullet_speed = 1500
+		bullet_damage = 25
+	elif(type == "Balanced"):
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 0.5
 		speed = 500
 		bullet_speed = 700
 		bullet_damage = 34
-	elif(type == "heavy"):
+	elif(type == "Heavy"):
 		max_hearts = 200
 		hearts = max_hearts
-		$Reload.wait_time = 2
+		$Reload.wait_time = 1
 		speed = 400
 		bullet_speed = 600
 		bullet_damage = 34
 
 
-
+#When the timer for reload goes out,
+#reset the cooldown to be able to shoot again
 func _on_Reload_timeout():
 	cd = false
 	
