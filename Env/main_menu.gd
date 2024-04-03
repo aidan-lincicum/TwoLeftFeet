@@ -1,18 +1,19 @@
 extends Control
 
 var classArray = ["Balanced", "Sniper", "Assasin", "Heavy"] #Holds the names of player classes
-var p1Pointer = 3 # Index of the selected player class for player 1
-var p2Pointer = 3 # Index of the selected player class for player 2
+var p1Pointer = -1 # Index of the selected player class for player 1
+var p2Pointer = -1 # Index of the selected player class for player 2
 
 #Switches scene to env which holds the actual game
 func _on_play_button_pressed():
-	var root_node = get_tree().root
-	var scene_node = root_node.get_node("Main Menu")
-	scene_node.queue_free()
-	
-	var new_scene = load("res://Env/env.tscn").instantiate()
-	new_scene.set_player_classes(classArray[p1Pointer], classArray[p2Pointer])
-	root_node.add_child(new_scene)
+	if(p1Pointer != -1 && p2Pointer != -1):
+		var root_node = get_tree().root
+		var scene_node = root_node.get_node("Main Menu")
+		scene_node.queue_free()
+
+		var new_scene = load("res://Env/env.tscn").instantiate()
+		new_scene.set_player_classes(classArray[p1Pointer], classArray[p2Pointer])
+		root_node.add_child(new_scene)
 
 # Quits the game
 func _on_quit_button_pressed():
@@ -20,7 +21,7 @@ func _on_quit_button_pressed():
 
 #Code to change player class
 func _on_left_p_1_pressed():
-	if(p1Pointer == 0):
+	if(p1Pointer == 0 || p1Pointer == -1):
 		p1Pointer = 3
 	else: 
 		p1Pointer -= 1
@@ -30,7 +31,7 @@ func _on_left_p_1_pressed():
 	$MarginContainer/VBoxContainer/HBoxContainer3/p1Class.append_text(p1String)
 
 func _on_right_p_1_pressed():
-	if(p1Pointer == 3):
+	if(p1Pointer == 3 || p1Pointer == -1):
 		p1Pointer = 0
 	else: 
 		p1Pointer += 1
@@ -41,7 +42,7 @@ func _on_right_p_1_pressed():
 
 
 func _on_left_p_2_pressed():
-	if(p2Pointer == 0):
+	if(p2Pointer == 0 || p2Pointer == -1):
 		p2Pointer = 3
 	else: 
 		p2Pointer -= 1
@@ -51,7 +52,7 @@ func _on_left_p_2_pressed():
 	$MarginContainer/VBoxContainer/HBoxContainer3/p2Class.append_text(p2String)
 
 func _on_right_p_2_pressed():
-	if(p2Pointer == 3):
+	if(p2Pointer == 3 || p2Pointer == -1):
 		p2Pointer = 0
 	else: 
 		p2Pointer -= 1

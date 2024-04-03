@@ -31,7 +31,7 @@ func shoot():
 
 func is_hit(damage):
 	hearts -= damage
-	emit_signal("hit", hearts)
+	emit_signal("hit", hearts, max_hearts)
 	if hearts <= 0:
 		# alive = false
 		queue_free()
