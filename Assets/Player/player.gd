@@ -22,4 +22,4 @@ func player_input():
 		
 	if Input.is_action_pressed('shoot'): 
 		shoot()
-		$Turret.rotate(rotation_speed)
+		

@@ -4,10 +4,15 @@ extends CharacterBody2D
 @export var timer : float # timer time is in p_bullet timer wait time variable 
 @export var damage : int
 
-func start(_position, _direction,_speed,_damage):
+var num_bounces = 0
+
+var type_of_tank
+
+func start(_position, _direction,_speed,_damage,_type_of_tank):
 	position = _position
 	rotation = _direction.angle()
 	damage = _damage
+	type_of_tank = _type_of_tank
 	velocity = _direction * _speed
 	$Timer.timeout.connect(on_timer_timeout)
 	
@@ -26,7 +31,16 @@ func _process(delta):
 		elif collider.get("name").begins_with("Player"):
 			hit(collider)
 		elif collider.get("name").begins_with("Static"):
-			ricochet(collision)
+			num_bounces = num_bounces + 1
+			if(num_bounces < 3 && type_of_tank == "Sniper"):
+				ricochet(collision)
+			else:
+				queue_free()
+			#if is_sniper == true:
+				#
+			#else:
+				#queue_free()
+			
 
 
 func hit(collider):

@@ -15,6 +15,7 @@ var cd = false
 var type_of_tank = "not assigned"
 var bullet_speed = 0
 var bullet_damage = 0
+var is_sniper = false
 
 func player_input():
 	pass
@@ -24,8 +25,8 @@ func shoot():
 		cd = true
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
-		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage)
-		$Turret.rotate(rotation_speed * 6)
+		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+		
 		
 
 #Called by bullet when it makes contact with a tank
@@ -43,33 +44,39 @@ func _physics_process(_delta):
 
 func set_class_type(type): 
 	if(type == "Sniper"):
+		type_of_tank = "Sniper"
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 2
 		speed = 500
 		bullet_speed = 3000
-		bullet_damage = 75
+		bullet_damage = 70
+		rotation_speed = -0.05
 	elif(type == "Assassin"):
-		max_hearts = 100
+		type_of_tank = "Assassin"
+		max_hearts = 75
 		hearts = max_hearts
 		$Reload.wait_time = 0.1
 		speed = 1200
 		bullet_speed = 1500
 		bullet_damage = 25
+		rotation_speed = -0.05
 	elif(type == "Balanced"):
+		type_of_tank = "Balanced"
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 0.5
-		speed = 500
-		bullet_speed = 700
+		speed = 800
+		bullet_speed = 1200
 		bullet_damage = 34
 	elif(type == "Heavy"):
-		max_hearts = 200
+		max_hearts = 100
 		hearts = max_hearts
-		$Reload.wait_time = 1
-		speed = 400
-		bullet_speed = 600
-		bullet_damage = 34
+		$Reload.wait_time = 1.5
+		speed = 1700
+		bullet_speed = 2000
+		bullet_damage = 70
+		rotation_speed = -0.08
 
 
 #When the timer for reload goes out,
