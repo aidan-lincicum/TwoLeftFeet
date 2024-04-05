@@ -55,7 +55,7 @@ func _on_right_p_2_pressed():
 	if(p2Pointer == 3 || p2Pointer == -1):
 		p2Pointer = 0
 	else: 
-		p2Pointer -= 1
+		p2Pointer += 1
 	
 	$MarginContainer/VBoxContainer/HBoxContainer3/p2Class.clear()
 	var p2String = "[center]" + classArray[p2Pointer] + "[/center]" 
