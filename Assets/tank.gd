@@ -16,6 +16,8 @@ var type_of_tank = "not assigned"
 var bullet_speed = 0
 var bullet_damage = 0
 var is_sniper = false
+var isInvincible = false
+var isBlink = false
 
 func player_input():
 	pass
@@ -31,15 +33,24 @@ func shoot():
 
 #Called by bullet when it makes contact with a tank
 func is_hit(damage):
-	hearts -= damage
-	emit_signal("hit", hearts, max_hearts)
-	if hearts <= 0:
-		# alive = false
-		queue_free()
+	if(!isInvincible):
+		$invincibility.start()
+		isInvincible = true
+		hearts -= damage
+		emit_signal("hit", hearts, max_hearts)
+		if hearts <= 0:
+			# alive = false
+			queue_free()
 
 func _physics_process(_delta):
 	player_input()
 	move_and_slide()
+	
+	#Starts tank blinking when hit
+	if(isInvincible && !isBlink):
+		self.set_modulate(Color(255,255,255,255))
+		$blinkOn.start()
+		isBlink = true
 
 
 func set_class_type(type): 
@@ -100,6 +111,22 @@ func set_default_stats():
 	set_class_type(type_of_tank)
 
 func _on_power_up_length_timeout():
-	
 	set_default_stats()
-	pass # Replace with function body.
+
+func _on_invincibility_timeout():
+	isInvincible = false
+
+#Flips between blinkOff and blinkOn while player is invincible
+func _on_blink_off_timeout():
+	if(isInvincible):
+		self.set_modulate(Color(255,255,255,255))
+		$blinkOn.start()
+	else:
+		isBlink = false
+
+func _on_blink_on_timeout():
+	self.set_modulate(Color(1,1,1,1))
+	if(isInvincible):
+		$blinkOff.start()
+	else:
+		isBlink = false
