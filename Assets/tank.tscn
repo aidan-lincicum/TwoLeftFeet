@@ -17,8 +17,10 @@ light_mask = 2
 visibility_layer = 7
 
 [node name="Reload" type="Timer" parent="."]
+process_callback = 0
 
 [node name="powerUpLength" type="Timer" parent="."]
+process_callback = 0
 wait_time = 5.0
 one_shot = true
 autostart = true
@@ -28,10 +30,17 @@ wait_time = 2.0
 one_shot = true
 
 [node name="blinkOff" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.1
 one_shot = true
 
 [node name="blinkOn" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="burstFire" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.1
 one_shot = true
 
@@ -40,3 +49,4 @@ one_shot = true
 [connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
 [connection signal="timeout" from="blinkOff" to="." method="_on_blink_off_timeout"]
 [connection signal="timeout" from="blinkOn" to="." method="_on_blink_on_timeout"]
+[connection signal="timeout" from="burstFire" to="." method="_on_burst_fire_timeout"]

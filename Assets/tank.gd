@@ -8,6 +8,11 @@ extends CharacterBody2D
 signal trigger
 signal hit(hearts)
 
+#Trying to make health packs reset the health sprites
+#but can't figure it out
+#signal health_pack(hearts)
+
+
 var rng = RandomNumberGenerator.new()
 var max_hearts = 3
 var hearts = max_hearts
@@ -18,18 +23,28 @@ var bullet_damage = 0
 var is_sniper = false
 var isInvincible = false
 var isBlink = false
+var burst_fire_count = 1
+var numShot = 0
+
 
 func player_input():
 	pass
 	
 func shoot():
 	if not cd:
+		print(burst_fire_count)
 		cd = true
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+		if(type_of_tank == "Assassin" && burst_fire_count < 3):
+			$burstFire.start()
 		
-		
+
+func _on_burst_fire_timeout():
+	burst_fire_count += 1
+	cd = false
+	shoot()
 
 #Called by bullet when it makes contact with a tank
 func is_hit(damage):
@@ -65,9 +80,10 @@ func set_class_type(type):
 		rotation_speed = -0.05
 	elif(type == "Assassin"):
 		type_of_tank = "Assassin"
+		set_burst_fire()
 		max_hearts = 75
 		hearts = max_hearts
-		$Reload.wait_time = 0.1
+		$Reload.wait_time = 1
 		speed = 1200
 		bullet_speed = 1500
 		bullet_damage = 25
@@ -90,22 +106,25 @@ func set_class_type(type):
 		rotation_speed = -0.08
 
 
+
 #When the timer for reload goes out,
 #reset the cooldown to be able to shoot again
 func _on_Reload_timeout():
+	burst_fire_count = 1
 	cd = false
-	
-func get_power_up(var_change,var_type):
+
+func set_burst_fire():
+	return
+
+func get_power_up(var_type):
 	$powerUpLength.start()
-	if(var_type == "speed"):
-		speed = var_change
-	if(var_type == "turret_cd"):
-		$Reload.wait_time = var_change
-	if(var_type == "max_hearts"):
-		max_hearts = var_change
-	#if(var_type == "bullet_speed"):
-		#bullet = var_change
-		#how to change bullet speed??
+	if(var_type == "hearts"):
+		hearts = max_hearts
+		#Trying to make hearts reset appear on health bar
+		#emit_signal("health_pack", hearts, max_hearts)
+	
+func printHearts():
+	print("hearts: " + str(hearts) + "max_hearts: " + str(max_hearts))
 	
 func set_default_stats():
 	set_class_type(type_of_tank)
@@ -130,3 +149,4 @@ func _on_blink_on_timeout():
 		$blinkOff.start()
 	else:
 		isBlink = false
+

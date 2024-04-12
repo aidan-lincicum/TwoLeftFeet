@@ -8,18 +8,16 @@ var power_up_x_position
 var power_up_y_position
 
 func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage,_type_of_tank):
-	var b = bullet.instantiate()
+	var b = bullet.instantiate ()
 	add_child(b)
 	b.start(_position, _direction,_speed,_damage,_type_of_tank)
 
 func _process(_delta):
 	if(!power_timer_is_running):
-		var my_random_number = rng.randf_range(5, 6)
-		makeTimer(my_random_number)
+		makeTimer(10)
 		
 func _ready():
-	var random_time_amount = rng.randf_range(5, 6)
-	makeTimer(random_time_amount)
+	makeTimer(10)
 	
 func makeTimer(amount_time):
 	$powerUpTimer.wait_time = amount_time
@@ -35,6 +33,8 @@ func spawn_power_up():
 func _on_power_up_timer_timeout():
 	spawn_power_up()
 	power_timer_is_running = false
+
+
 	
 func set_player_classes(player1, player2):
 	print(player1)

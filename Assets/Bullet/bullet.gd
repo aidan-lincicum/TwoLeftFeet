@@ -36,10 +36,6 @@ func _process(delta):
 				ricochet(collision)
 			else:
 				queue_free()
-			#if is_sniper == true:
-				#
-			#else:
-				#queue_free()
 			
 
 

@@ -14,3 +14,5 @@ func _on_Player1_hit(hearts : float, max_hearts: float):
 		var new_scene = load("res://Env/restart.tscn").instantiate()
 		root_node.add_child(new_scene)
 		new_scene.set_win("Player 2")
+
+
