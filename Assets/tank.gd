@@ -78,8 +78,8 @@ func set_class_type(type):
 		bullet_speed = 3000
 		bullet_damage = 70
 		rotation_speed = -0.05
-	elif(type == "Assassin"):
-		type_of_tank = "Assassin"
+	elif(type == "Rifler"):
+		type_of_tank = "Rifler"
 		set_burst_fire()
 		max_hearts = 75
 		hearts = max_hearts
@@ -88,27 +88,17 @@ func set_class_type(type):
 		bullet_speed = 1500
 		bullet_damage = 25
 		rotation_speed = -0.05
-	elif(type == "Balanced"):
-		type_of_tank = "Balanced"
-		max_hearts = 100
-		hearts = max_hearts
-		$Reload.wait_time = 0.5
-		speed = 800
-		bullet_speed = 1200
-		bullet_damage = 34
-	elif(type == "Heavy"):
+	elif(type == "Shotgun"):
+		type_of_tank = "Shotgun"
 		max_hearts = 100
 		hearts = max_hearts
 		$Reload.wait_time = 1.5
 		speed = 1700
-		bullet_speed = 2000
+		bullet_speed = 1000
 		bullet_damage = 70
 		rotation_speed = -0.08
 
-
-
-#When the timer for reload goes out,
-#reset the cooldown to be able to shoot again
+#When the timer for reload goes out, reset the cooldown to be able to shoot again
 func _on_Reload_timeout():
 	burst_fire_count = 1
 	cd = false
@@ -126,11 +116,10 @@ func get_power_up(var_type):
 func printHearts():
 	print("hearts: " + str(hearts) + "max_hearts: " + str(max_hearts))
 	
+
 func set_default_stats():
 	set_class_type(type_of_tank)
 
-func _on_power_up_length_timeout():
-	set_default_stats()
 
 func _on_invincibility_timeout():
 	isInvincible = false
