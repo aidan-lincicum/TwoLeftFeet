@@ -37,7 +37,7 @@ func shoot():
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
-		if(type_of_tank == "Assassin" && burst_fire_count < 3):
+		if(type_of_tank == "Rifler" && burst_fire_count < 3):
 			$burstFire.start()
 		
 
