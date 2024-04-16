@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu1ct7877utkb"]
+[gd_scene load_steps=3 format=3 uid="uid://cu1ct7877utkb"]
 
 [ext_resource type="Script" path="res://Env/restart.gd" id="1_bg61h"]
+
+[sub_resource type="SystemFont" id="SystemFont_q1i1i"]
 
 [node name="Restart Menu" type="Control"]
 layout_mode = 3
@@ -28,6 +30,7 @@ layout_mode = 2
 
 [node name="winner_text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_q1i1i")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center] Player 1 Won[/center]
@@ -39,9 +42,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "Return to Main Menu
 "
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

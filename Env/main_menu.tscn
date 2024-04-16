@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg113bvpq31e8"]
+[gd_scene load_steps=3 format=3 uid="uid://dg113bvpq31e8"]
 
 [ext_resource type="Script" path="res://Env/main_menu.gd" id="1_smb3p"]
+[ext_resource type="Texture2D" uid="uid://c2x4bpk3qh7ik" path="res://startBG.png" id="2_gx0yw"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -94,6 +95,13 @@ scroll_active = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 200
 text = ">"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_gx0yw")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
