@@ -29,21 +29,34 @@ func _process(delta):
 		var collider = collision.get_collider()
 		if collider.get("name").begins_with("p_bullet"):
 			collider.queue_free()
-			queue_free()
+			explode()
 		elif collider.get("name").begins_with("Player"):
+			explode()
 			hit(collider)
 		elif collider.get("name").begins_with("Static"):
 			num_bounces = num_bounces + 1
 			if(num_bounces < 3 && type_of_tank == "Sniper"):
 				ricochet(collision)
 			else:
-				queue_free()
+				explode()
 
 func hit(collider):
 	collider.is_hit(damage)
-	queue_free()
-
+	
 func ricochet(collision):
 	var reflect = collision.get_remainder().bounce(collision.get_normal())
 	velocity = velocity.bounce(collision.get_normal())
 	move_and_collide(reflect)
+	
+func explode():
+	$Sprite2D.hide()
+	$Trail.hide()
+	self.set_collision_mask_value(1, false)
+	self.set_collision_mask_value(2, false)
+	$Explosion.direction = Vector2(-1,0).normalized()
+	$Explosion.emitting = true
+	velocity = Vector2(0,0)
+	$Despawn.start()
+
+func _on_despawn_timeout():
+	queue_free()
