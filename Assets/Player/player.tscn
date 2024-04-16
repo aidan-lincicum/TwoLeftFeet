@@ -31,7 +31,7 @@ texture = ExtResource("5_dbj1t")
 offset = Vector2(1500, 2.08165e-12)
 
 [node name="Gun" parent="Turret" index="0"]
-position = Vector2(2500, 2.08165e-12)
+position = Vector2(3137.15, -2.49436)
 
 [node name="Collision" parent="." index="2"]
 position = Vector2(-1, 0)
