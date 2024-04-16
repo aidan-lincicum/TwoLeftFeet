@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bughf81041bd"]
+[gd_scene load_steps=6 format=3 uid="uid://bughf81041bd"]
 
 [ext_resource type="Texture2D" uid="uid://kb81vkfqppqq" path="res://Assets/bullet.png" id="2_6wkea"]
 [ext_resource type="Script" path="res://Assets/Player/player_bullet.gd" id="2_yngh0"]
@@ -9,6 +9,10 @@ radius = 380.526
 [sub_resource type="Gradient" id="Gradient_wa7i3"]
 offsets = PackedFloat32Array(0, 0.17757, 1)
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0.207843, 1, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_ugjts"]
+offsets = PackedFloat32Array(0, 0.228972, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0)
 
 [node name="p_bullet" type="CharacterBody2D"]
 scale = Vector2(0.01, 0.01)
@@ -55,6 +59,7 @@ initial_velocity_min = 50000.0
 initial_velocity_max = 50000.0
 scale_amount_min = 0.02
 scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_ugjts")
 
 [node name="Despawn" type="Timer" parent="."]
 one_shot = true
