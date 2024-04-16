@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bughf81041bd"]
+[gd_scene load_steps=5 format=3 uid="uid://bughf81041bd"]
 
 [ext_resource type="Texture2D" uid="uid://kb81vkfqppqq" path="res://Assets/bullet.png" id="2_6wkea"]
 [ext_resource type="Script" path="res://Assets/Player/player_bullet.gd" id="2_yngh0"]
@@ -6,10 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vn4ji"]
 radius = 380.526
 
+[sub_resource type="Gradient" id="Gradient_wa7i3"]
+offsets = PackedFloat32Array(0, 0.17757, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0.207843, 1, 0, 0, 0)
+
 [node name="p_bullet" type="CharacterBody2D"]
 scale = Vector2(0.01, 0.01)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("2_yngh0")
 speed = 1000
 
@@ -25,3 +29,32 @@ debug_color = Color(0.803922, 0.282353, 0.772549, 0.419608)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+amount = 10
+lifetime = 0.1
+texture = ExtResource("2_6wkea")
+gravity = Vector2(0, 0)
+scale_amount_min = 0.06
+scale_amount_max = 0.06
+color_ramp = SubResource("Gradient_wa7i3")
+
+[node name="Explosion" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 10
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.5
+fract_delta = false
+texture = ExtResource("2_6wkea")
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50000.0
+initial_velocity_max = 50000.0
+scale_amount_min = 0.02
+scale_amount_max = 0.03
+
+[node name="Despawn" type="Timer" parent="."]
+one_shot = true

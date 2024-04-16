@@ -22,3 +22,8 @@ shape = SubResource("CircleShape2D_qtjy7")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Despawn" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
