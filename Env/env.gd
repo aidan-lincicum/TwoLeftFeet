@@ -8,7 +8,7 @@ var power_up_x_position
 var power_up_y_position
 
 func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage,_type_of_tank):
-	var b = bullet.instantiate ()
+	var b = bullet.instantiate()
 	add_child(b)
 	b.start(_position, _direction,_speed,_damage,_type_of_tank)
 
@@ -38,3 +38,14 @@ func set_player_classes(player1, player2):
 	$Player1.set_class_type(player1)
 	$Player2.set_class_type(player2)
 
+func disable_player():
+	$Player1.disabled = true
+	$Player2.disabled = true
+	$Player1.velocity = Vector2(0,0)
+	$Player2.velocity = Vector2(0,0)
+
+func _on_player_2_player_dead():
+	disable_player()
+
+func _on_player_1_player_1_dead():
+	disable_player()

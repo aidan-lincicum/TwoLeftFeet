@@ -26,7 +26,6 @@ var isBlink = false
 var burst_fire_count = 1
 var numShot = 0
 
-
 func player_input():
 	pass
 	
@@ -54,8 +53,10 @@ func is_hit(damage):
 		hearts -= damage
 		emit_signal("hit", hearts, max_hearts)
 		if hearts <= 0:
-			# alive = false
-			queue_free()
+			$Body.hide()
+			$Turret.hide()
+			$DeathExplosion.emitting = true
+			
 
 func _physics_process(_delta):
 	player_input()

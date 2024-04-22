@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4gdm6vuggd4o"]
+[gd_scene load_steps=8 format=3 uid="uid://d4gdm6vuggd4o"]
 
 [ext_resource type="PackedScene" uid="uid://chwk4j82ps6it" path="res://Assets/tank.tscn" id="1_krmh1"]
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="2_vcypm"]
 [ext_resource type="PackedScene" uid="uid://bughf81041bd" path="res://Assets/Player/player_bullet.tscn" id="3_bw4m8"]
 [ext_resource type="Texture2D" uid="uid://cj2lnxdk8l8ru" path="res://Assets/bluetankbody.png" id="4_oa7bn"]
 [ext_resource type="Texture2D" uid="uid://b72w3two6ky4j" path="res://Assets/orangeturret.png" id="5_dbj1t"]
+[ext_resource type="Texture2D" uid="uid://kb81vkfqppqq" path="res://Assets/bullet.png" id="6_ad0vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iy3m"]
 size = Vector2(89, 91)
@@ -37,3 +38,17 @@ position = Vector2(3137.15, -2.49436)
 position = Vector2(-1, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6iy3m")
+
+[node name="DeathExplosion" type="CPUParticles2D" parent="." index="9"]
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+texture = ExtResource("6_ad0vm")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1500.0
+scale_amount_min = 0.06
+scale_amount_max = 0.08
+color = Color(0.122555, 0.270553, 0.963449, 1)

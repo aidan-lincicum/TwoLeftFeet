@@ -1,25 +1,28 @@
 extends "res://Assets/tank.gd"
 
+var disabled = false
+
 func turret_rotate():
 	pass
 	
 func player_input():
-	velocity = Vector2(0,0)
-	var x = 0
-	var y = 0
-	if Input.is_action_pressed('up'):
-		y -= 1
-	if Input.is_action_pressed('down'):
-		y += 1
-	if Input.is_action_pressed('right'):
-		x += 1
-	if Input.is_action_pressed('left'):
-		x -= 1
-	velocity = Vector2(x, y).normalized() * speed
-	
-	if Input.is_action_pressed('turret_turn'):
-		$Turret.rotate(rotation_speed)
+	if(!disabled):
+		velocity = Vector2(0,0)
+		var x = 0
+		var y = 0
+		if Input.is_action_pressed('up'):
+			y -= 1
+		if Input.is_action_pressed('down'):
+			y += 1
+		if Input.is_action_pressed('right'):
+			x += 1
+		if Input.is_action_pressed('left'):
+			x -= 1
+		velocity = Vector2(x, y).normalized() * speed
 		
-	if Input.is_action_pressed('shoot'): 
-		shoot()
+		if Input.is_action_pressed('turret_turn'):
+			$Turret.rotate(rotation_speed)
+			
+		if Input.is_action_pressed('shoot'): 
+			shoot()
 		
