@@ -2,8 +2,10 @@ extends Control
 
 #Sets text box to contain correct winner
 func set_win(string):
-		$MarginContainer/VBoxContainer/winner_text.clear()
-		$MarginContainer/VBoxContainer/winner_text.append_text("[center]" + string + " Wins [/center]")
+		if(string == "Player 1"):
+			$MarginContainer/VBoxContainer/Player1.show()
+		else:
+			$MarginContainer/VBoxContainer/Player2.show()
 
 #Restarts the game by switching scene to env
 func _on_button_pressed(): 

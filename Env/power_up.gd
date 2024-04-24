@@ -7,7 +7,6 @@ func _process(_delta):
 func _on_body_entered(area):
 	if area.name.begins_with("Player"):
 		area.get_power_up("hearts")
-		area.printHearts()
 		queue_free()
 		
 	if area.name.begins_with("StaticBody2D"):

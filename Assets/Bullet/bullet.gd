@@ -13,11 +13,11 @@ func start(_position, _direction,_speed,_damage,_type_of_tank):
 	rotation = _direction.angle()
 	damage = _damage
 	type_of_tank = _type_of_tank
-	if(type_of_tank == "Shotgun"):
-		scale.x = 0.04
-		scale.y = 0.04
-		$Trail.scale_amount_max = 0.3
-		$Trail.scale_amount_min = 0.3
+	#if(type_of_tank == "Shotgun"):
+		#scale.x = 0.04
+		#scale.y = 0.04
+		#$Trail.scale_amount_max = 0.3
+		#$Trail.scale_amount_min = 0.3
 	velocity = _direction * _speed
 	$Timer.timeout.connect(on_timer_timeout)
 
