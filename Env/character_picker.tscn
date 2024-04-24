@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://biytmmx1emkm4"]
+
+[ext_resource type="Texture2D" uid="uid://cbup4825jonhc" path="res://Env/Gamebackground.png" id="1_3r2r0"]
+[ext_resource type="Texture2D" uid="uid://bcvpvnso3rjas" path="res://Env/pickyourcharacter.png" id="2_l4opm"]
+[ext_resource type="Texture2D" uid="uid://pcd80601emf8" path="res://Env/picker.png" id="3_rmqft"]
+[ext_resource type="Texture2D" uid="uid://dmfgq4bx6n6v7" path="res://Env/readybtn.png" id="4_6sqdh"]
+
+[node name="CharacterPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3r2r0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="pickyourclass" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_l4opm")
+
+[node name="pickerui" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rmqft")
+stretch_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ready" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_6sqdh")
+flat = true
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 2.08165e-12)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_6sqdh")
