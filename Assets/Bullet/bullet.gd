@@ -22,7 +22,8 @@ func start(_position, _direction,_speed,_damage,_type_of_tank):
 	$Timer.timeout.connect(on_timer_timeout)
 
 func on_timer_timeout():
-	queue_free()
+	$Explosion.spread = 180
+	explode()
 
 func _process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
@@ -59,6 +60,7 @@ func explode():
 	$Explosion.emitting = true
 	velocity = Vector2(0,0)
 	$Despawn.start()
+	$Timer.stop()
 
 func _on_despawn_timeout():
 	queue_free()

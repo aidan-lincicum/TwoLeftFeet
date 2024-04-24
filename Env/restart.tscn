@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu1ct7877utkb"]
+[gd_scene load_steps=6 format=3 uid="uid://cu1ct7877utkb"]
 
 [ext_resource type="Script" path="res://Env/restart.gd" id="1_bg61h"]
-
-[sub_resource type="SystemFont" id="SystemFont_q1i1i"]
+[ext_resource type="Texture2D" uid="uid://c3r0sfe0uudv8" path="res://Env/restartBG.png" id="2_b5w2a"]
+[ext_resource type="Texture2D" uid="uid://d4y0yx710631" path="res://Env/returnbtn.png" id="3_f8vcg"]
+[ext_resource type="Texture2D" uid="uid://cee53g7oorsqx" path="res://Env/player1won.png" id="3_llv3o"]
+[ext_resource type="Texture2D" uid="uid://br86kmofhf4o7" path="res://Env/player2won.png" id="4_e6vhn"]
 
 [node name="Restart Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +15,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bg61h")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b5w2a")
+metadata/_edit_use_anchors_ = true
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -20,27 +32,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 180
-theme_override_constants/margin_top = 90
-theme_override_constants/margin_right = 180
-theme_override_constants/margin_bottom = 90
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="winner_text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="Player1" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
-theme_override_fonts/normal_font = SubResource("SystemFont_q1i1i")
-theme_override_font_sizes/normal_font_size = 100
-bbcode_enabled = true
-text = "[center] Player 1 Won[/center]
-"
-fit_content = true
+texture = ExtResource("3_llv3o")
+
+[node name="Player2" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_e6vhn")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
-text = "Return to Main Menu
-"
+icon = ExtResource("3_f8vcg")
+flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
