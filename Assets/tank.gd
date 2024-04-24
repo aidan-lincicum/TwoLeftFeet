@@ -12,7 +12,6 @@ signal hit(hearts)
 #but can't figure it out
 #signal health_pack(hearts)
 
-
 var rng = RandomNumberGenerator.new()
 var max_hearts = 3
 var hearts = max_hearts
@@ -31,14 +30,22 @@ func player_input():
 	
 func shoot():
 	if not cd:
-		print(burst_fire_count)
 		cd = true
 		$Reload.start()
 		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
 		emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
 		if(type_of_tank == "Rifler" && burst_fire_count < 3):
 			$burstFire.start()
-		
+		if(type_of_tank == "Shotgun"):
+			dir = Vector2(1, 0).rotated($Turret.global_rotation + .5)
+			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation + .10)
+			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation - .5)
+			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation - .10)
+			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
+
 
 func _on_burst_fire_timeout():
 	burst_fire_count += 1
@@ -113,10 +120,7 @@ func get_power_up(var_type):
 		hearts = max_hearts
 		#Trying to make hearts reset appear on health bar
 		#emit_signal("health_pack", hearts, max_hearts)
-	
-func printHearts():
-	print("hearts: " + str(hearts) + "max_hearts: " + str(max_hearts))
-	
+
 
 func set_default_stats():
 	set_class_type(type_of_tank)

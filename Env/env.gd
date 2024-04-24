@@ -14,10 +14,10 @@ func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage,_type_of_tank):
 
 func _process(_delta):
 	if(!power_timer_is_running):
-		makeTimer(10)
+		makeTimer(7)
 
 func _ready():
-	makeTimer(10)
+	makeTimer(7)
 
 func makeTimer(amount_time):
 	$powerUpTimer.wait_time = amount_time
