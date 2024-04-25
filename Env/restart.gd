@@ -15,3 +15,7 @@ func _on_button_pressed():
 		
 		var new_scene = load("res://Env/main_menu.tscn").instantiate()
 		root_node.add_child(new_scene)
+
+# Quit game
+func _on_quit_pressed():
+	get_tree().quit()

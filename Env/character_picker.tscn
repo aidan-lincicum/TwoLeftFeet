@@ -68,12 +68,7 @@ layout_mode = 2
 icon = ExtResource("4_xnwp6")
 flat = true
 
-[node name="Class Name and description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Class Descrption
-"
-
-[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="add class descript" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(400, 2.08165e-12)
 layout_mode = 2
 
@@ -91,7 +86,7 @@ layout_mode = 2
 icon = ExtResource("4_xnwp6")
 flat = true
 
-[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="add class descrip" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(400, 2.08165e-12)
 layout_mode = 2
 

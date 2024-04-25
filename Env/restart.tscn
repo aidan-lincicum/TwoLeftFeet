@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu1ct7877utkb"]
+[gd_scene load_steps=7 format=3 uid="uid://cu1ct7877utkb"]
 
 [ext_resource type="Script" path="res://Env/restart.gd" id="1_bg61h"]
 [ext_resource type="Texture2D" uid="uid://c3r0sfe0uudv8" path="res://Env/restartBG.png" id="2_b5w2a"]
 [ext_resource type="Texture2D" uid="uid://d4y0yx710631" path="res://Env/returnbtn.png" id="3_f8vcg"]
 [ext_resource type="Texture2D" uid="uid://cee53g7oorsqx" path="res://Env/player1won.png" id="3_llv3o"]
 [ext_resource type="Texture2D" uid="uid://br86kmofhf4o7" path="res://Env/player2won.png" id="4_e6vhn"]
+[ext_resource type="Texture2D" uid="uid://d2vghdyjsynb4" path="res://Env/quitbtn.png" id="6_5iw00"]
 
 [node name="Restart Menu" type="Control"]
 layout_mode = 3
@@ -40,6 +41,10 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+
 [node name="Player1" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -50,11 +55,23 @@ visible = false
 layout_mode = 2
 texture = ExtResource("4_e6vhn")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 150
+
+[node name="return" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
 icon = ExtResource("3_f8vcg")
 flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_5iw00")
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/quit" to="." method="_on_quit_pressed"]
