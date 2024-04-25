@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://biytmmx1emkm4"]
+[gd_scene load_steps=8 format=3 uid="uid://biytmmx1emkm4"]
 
+[ext_resource type="Script" path="res://Env/character_picker.gd" id="1_pd3sk"]
 [ext_resource type="Texture2D" uid="uid://6fgia6p7vt87" path="res://Env/pickerBG.png" id="1_pdf6l"]
 [ext_resource type="Texture2D" uid="uid://bcvpvnso3rjas" path="res://Env/pickyourcharacter.png" id="2_l4opm"]
 [ext_resource type="Texture2D" uid="uid://71lscrti1qeg" path="res://Env/playerpicktitle.png" id="3_lb8r1"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pd3sk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -104,7 +106,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ready" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ready1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -115,7 +117,14 @@ flat = true
 custom_minimum_size = Vector2(300, 2.08165e-12)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ready2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_6sqdh")
 flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/left1" to="." method="_on_left_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/right1" to="." method="_on_right_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/left2" to="." method="_on_left_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/right2" to="." method="_on_right_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ready1" to="." method="_on_ready_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ready2" to="." method="_on_ready_2_pressed"]
