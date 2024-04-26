@@ -63,4 +63,5 @@ scale_amount_max = 0.03
 color_ramp = SubResource("Gradient_ugjts")
 
 [node name="Despawn" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true

@@ -20,10 +20,14 @@ func start(_position, _direction,_speed,_damage,_type_of_tank):
 		#$Trail.scale_amount_min = 0.3
 	velocity = _direction * _speed
 	$Timer.timeout.connect(on_timer_timeout)
+	$Despawn.timeout.connect(on_despawn_timeout)
 
 func on_timer_timeout():
 	$Explosion.spread = 180
 	explode()
+	
+func on_despawn_timeout():
+	queue_free()
 
 func _process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
@@ -61,6 +65,3 @@ func explode():
 	velocity = Vector2(0,0)
 	$Despawn.start()
 	$Timer.stop()
-
-func _on_despawn_timeout():
-	queue_free()

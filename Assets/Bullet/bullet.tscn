@@ -26,5 +26,3 @@ autostart = true
 
 [node name="Despawn" type="Timer" parent="."]
 one_shot = true
-
-[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
