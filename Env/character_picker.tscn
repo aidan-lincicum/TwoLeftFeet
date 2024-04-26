@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://biytmmx1emkm4"]
+[gd_scene load_steps=10 format=3 uid="uid://biytmmx1emkm4"]
 
 [ext_resource type="Script" path="res://Env/character_picker.gd" id="1_pd3sk"]
 [ext_resource type="Texture2D" uid="uid://6fgia6p7vt87" path="res://Env/pickerBG.png" id="1_pdf6l"]
@@ -7,11 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmfgq4bx6n6v7" path="res://Env/readybtn.png" id="4_6sqdh"]
 [ext_resource type="Texture2D" uid="uid://saa12ea4c0wn" path="res://Env/left_arrow.png" id="4_xnwp6"]
 [ext_resource type="Texture2D" uid="uid://bg0gedspxfww5" path="res://Env/right_arrow.png" id="5_ad0oo"]
-[ext_resource type="Texture2D" uid="uid://bo6nitrur4gnt" path="res://Env/shotgun (1).png" id="6_p4qvn"]
-[ext_resource type="Texture2D" uid="uid://diyhlw1cn0nco" path="res://Env/rifler (1).png" id="7_firlv"]
 [ext_resource type="Texture2D" uid="uid://dmxnrk34pmdtw" path="res://Env/sniper (1).png" id="7_i8afj"]
-[ext_resource type="Texture2D" uid="uid://djo2d8pyc47l3" path="res://Env/sniper (2).png" id="9_10n7f"]
-[ext_resource type="Texture2D" uid="uid://c6d3e76nh121f" path="res://Env/shotgun (2).png" id="10_6hl11"]
 [ext_resource type="Texture2D" uid="uid://jk03fxdoow2y" path="res://Env/rifler (2).png" id="10_qbxtl"]
 
 [node name="CharacterPicker" type="Control"]
@@ -72,17 +68,7 @@ layout_mode = 2
 icon = ExtResource("4_xnwp6")
 flat = true
 
-[node name="shotgun" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-layout_mode = 2
-texture = ExtResource("6_p4qvn")
-
-[node name="rifler" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-layout_mode = 2
-texture = ExtResource("7_firlv")
-
-[node name="sniper" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="p1Description" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("7_i8afj")
 
@@ -100,19 +86,9 @@ layout_mode = 2
 icon = ExtResource("4_xnwp6")
 flat = true
 
-[node name="rifler2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="p2Description" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("10_qbxtl")
-
-[node name="sniper2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-layout_mode = 2
-texture = ExtResource("9_10n7f")
-
-[node name="shotgun2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-layout_mode = 2
-texture = ExtResource("10_6hl11")
 
 [node name="right2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
