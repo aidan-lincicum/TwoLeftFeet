@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diyhlw1cn0nco"
-path="res://.godot/imported/rifler (1).png-2c12c7f7529b82018cbdbfe3fd94494b.ctex"
+uid="uid://bpewagr6t3bwi"
+path="res://.godot/imported/rifler1.png-c695fd3f8486b08b6044c93586ddeed4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Env/rifler (1).png"
-dest_files=["res://.godot/imported/rifler (1).png-2c12c7f7529b82018cbdbfe3fd94494b.ctex"]
+source_file="res://Env/rifler1.png"
+dest_files=["res://.godot/imported/rifler1.png-c695fd3f8486b08b6044c93586ddeed4.ctex"]
 
 [params]
 
