@@ -5,8 +5,8 @@ var p1Pointer = -1 # Index of the selected player class for player 1
 var p2Pointer = -1 # Index of the selected player class for player 2
 var p1Ready = false
 var p2Ready = false
-var buttonIcon = preload("res://Env/readybtn.png")
-var selectedButtonIcon = preload("res://Env/ready_select.png")
+var buttonIcon = preload("res://Assets/Images/readybtn.png")
+var selectedButtonIcon = preload("res://Assets/Images/ready_select.png")
 
 #Changes scene when both p1 and p2 are ready
 func _process(_delta):
