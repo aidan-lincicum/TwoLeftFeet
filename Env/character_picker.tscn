@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://saa12ea4c0wn" path="res://Env/left_arrow.png" id="4_xnwp6"]
 [ext_resource type="Texture2D" uid="uid://bg0gedspxfww5" path="res://Env/right_arrow.png" id="5_ad0oo"]
 [ext_resource type="Texture2D" uid="uid://dmxnrk34pmdtw" path="res://Env/sniper (1).png" id="7_i8afj"]
-[ext_resource type="Texture2D" path="res://Env/rifler (2).png" id="10_qbxtl"]
+[ext_resource type="Texture2D" uid="uid://drshbqg2e1xtw" path="res://Env/rifler2.png" id="8_5ufak"]
 
 [node name="CharacterPicker" type="Control"]
 layout_mode = 3
@@ -88,7 +88,7 @@ flat = true
 
 [node name="p2Description" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("10_qbxtl")
+texture = ExtResource("8_5ufak")
 
 [node name="right2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
