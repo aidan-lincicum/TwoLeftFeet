@@ -5,14 +5,14 @@ var p1Pointer = 1 # Index of the selected player class for player 1
 var p2Pointer = 0 # Index of the selected player class for player 2
 var p1Ready = false
 var p2Ready = false
-var buttonIcon = preload("res://Env/readybtn.png")
-var selectedButtonIcon = preload("res://Env/ready_select.png")
-var riflerDescription1 = preload("res://Env/rifler1.png")
-var shotgunDescription1 = preload("res://Env/shotgun1.png")
-var sniperDescription1 = preload("res://Env/sniper1.png")
-var riflerDescription2 = preload("res://Env/rifler2.png")
-var shotgunDescription2 = preload("res://Env/shotgun2.png")
-var sniperDescription2 = preload("res://Env/sniper2.png")
+var buttonIcon = preload("res://Assets/Images/readybtn.png")
+var selectedButtonIcon = preload("res://Assets/Images/ready_select.png")
+var riflerDescription1 = preload("res://Assets/Images/rifler (1).png")
+var shotgunDescription1 = preload("res://Assets/Images/shotgun (1).png")
+var sniperDescription1 = preload("res://Assets/Images/sniper (1).png")
+var riflerDescription2 = preload("res://Assets/Images/rifler (2).png")
+var shotgunDescription2 = preload("res://Assets/Images/shotgun (2).png")
+var sniperDescription2 = preload("res://Assets/Images/sniper (2).png")
 
 #Changes scene when both p1 and p2 are ready
 func _process(_delta):

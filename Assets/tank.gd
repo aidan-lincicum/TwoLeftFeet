@@ -8,9 +8,6 @@ extends CharacterBody2D
 signal trigger
 signal hit(hearts)
 
-#Trying to make health packs reset the health sprites
-#but can't figure it out
-#signal health_pack(hearts)
 
 var rng = RandomNumberGenerator.new()
 var max_hearts = 3
@@ -54,16 +51,14 @@ func _on_burst_fire_timeout():
 
 #Called by bullet when it makes contact with a tank
 func is_hit(damage):
-	if(!isInvincible):
-		$invincibility.start()
-		isInvincible = true
-		hearts -= damage
-		emit_signal("hit", hearts, max_hearts)
-		if hearts <= 0:
-			$Body.hide()
-			$Turret.hide()
-			$DeathExplosion.emitting = true
-			
+	$invincibility.start()
+	isInvincible = true
+	hearts -= damage
+	emit_signal("hit", hearts, max_hearts)
+	if hearts <= 0:
+		$Body.hide()
+		$Turret.hide()
+		$DeathExplosion.emitting = true
 
 func _physics_process(_delta):
 	player_input()
@@ -103,7 +98,7 @@ func set_class_type(type):
 		$Reload.wait_time = 1.5
 		speed = 1700
 		bullet_speed = 1000
-		bullet_damage = 70
+		bullet_damage = 20
 		rotation_speed = -0.08
 
 #When the timer for reload goes out, reset the cooldown to be able to shoot again
@@ -118,8 +113,7 @@ func get_power_up(var_type):
 	$powerUpLength.start()
 	if(var_type == "hearts"):
 		hearts = max_hearts
-		#Trying to make hearts reset appear on health bar
-		#emit_signal("health_pack", hearts, max_hearts)
+		emit_signal("hit", hearts + 1, max_hearts + 1)
 
 
 func set_default_stats():
@@ -131,9 +125,9 @@ func _on_invincibility_timeout():
 
 #Flips between blinkOff and blinkOn while player is invincible
 func _on_blink_off_timeout():
+	$blinkOn.start()
 	if(isInvincible):
 		self.set_modulate(Color(255,255,255,255))
-		$blinkOn.start()
 	else:
 		isBlink = false
 

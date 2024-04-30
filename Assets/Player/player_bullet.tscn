@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bughf81041bd"]
 
-[ext_resource type="Texture2D" uid="uid://kb81vkfqppqq" path="res://Assets/bullet.png" id="2_6wkea"]
+[ext_resource type="Texture2D" uid="uid://kb81vkfqppqq" path="res://Assets/Images/bullet.png" id="2_3nft2"]
 [ext_resource type="Script" path="res://Assets/Player/player_bullet.gd" id="2_yngh0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vn4ji"]
@@ -23,7 +23,7 @@ speed = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("2_6wkea")
+texture = ExtResource("2_3nft2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(5, 5)
@@ -32,13 +32,12 @@ debug_color = Color(0.803922, 0.282353, 0.772549, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 autostart = true
 
 [node name="Trail" type="CPUParticles2D" parent="."]
 amount = 10
 lifetime = 0.1
-texture = ExtResource("2_6wkea")
+texture = ExtResource("2_3nft2")
 gravity = Vector2(0, 0)
 scale_amount_min = 0.06
 scale_amount_max = 0.06
@@ -53,7 +52,7 @@ explosiveness = 1.0
 randomness = 0.5
 lifetime_randomness = 0.5
 fract_delta = false
-texture = ExtResource("2_6wkea")
+texture = ExtResource("2_3nft2")
 spread = 90.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 50000.0

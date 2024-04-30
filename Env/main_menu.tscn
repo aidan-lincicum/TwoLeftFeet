@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp1pxbceevj0s"]
+[gd_scene load_steps=3 format=3 uid="uid://cpnohpe0efq07"]
 
-[ext_resource type="Script" path="res://Env/main_menu.gd" id="1_smb3p"]
-[ext_resource type="Texture2D" uid="uid://c2x4bpk3qh7ik" path="res://Env/startBG.png" id="2_gx0yw"]
+[ext_resource type="Script" path="res://Env/env.gd" id="1_smb3p"]
+[ext_resource type="Texture2D" uid="uid://c2x4bpk3qh7ik" path="res://Assets/Images/startBG.png" id="2_gx0yw"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
