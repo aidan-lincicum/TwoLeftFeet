@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v0l2gy3koi03"
-path="res://.godot/imported/exitbtn.png-907c49d0e1a34412ece936deaa117150.ctex"
+uid="uid://drshbqg2e1xtw"
+path="res://.godot/imported/rifler2.png-3c1de284bf34e916a4dd4ae7eadebf00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Env/exitbtn.png"
-dest_files=["res://.godot/imported/exitbtn.png-907c49d0e1a34412ece936deaa117150.ctex"]
+source_file="res://Assets/Images/rifler2.png"
+dest_files=["res://.godot/imported/rifler2.png-3c1de284bf34e916a4dd4ae7eadebf00.ctex"]
 
 [params]
 

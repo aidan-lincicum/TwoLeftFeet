@@ -22,9 +22,16 @@ var isBlink = false
 var burst_fire_count = 1
 var numShot = 0
 
+var shotgunBody = preload("res://Assets/Images/shotgunbody.png")
+var shotgunTurret = preload("res://Assets/Images/shotgunturret.png")
+var sniperBody = preload("res://Assets/Images/sniperbody.png")
+var sniperTurret = preload("res://Assets/Images/sniperturret.png")
+var riflerBody = preload("res://Assets/Images/riflerbody.png")
+var riflerTurret = preload("res://Assets/Images/riflerturret.png")
+
 func player_input():
 	pass
-	
+
 func shoot():
 	if not cd:
 		cd = true
@@ -81,6 +88,8 @@ func set_class_type(type):
 		bullet_speed = 3000
 		bullet_damage = 70
 		rotation_speed = -0.05
+		$Body.texture = sniperBody
+		$Turret.texture = sniperTurret
 	elif(type == "Rifler"):
 		type_of_tank = "Rifler"
 		set_burst_fire()
@@ -91,6 +100,10 @@ func set_class_type(type):
 		bullet_speed = 1500
 		bullet_damage = 25
 		rotation_speed = -0.05
+		$Body.texture = riflerBody
+		$Turret.texture = riflerTurret
+		riflerBody.scale *= 50
+		
 	elif(type == "Shotgun"):
 		type_of_tank = "Shotgun"
 		max_hearts = 100
@@ -100,6 +113,9 @@ func set_class_type(type):
 		bullet_speed = 1000
 		bullet_damage = 20
 		rotation_speed = -0.08
+		$Body.texture = shotgunBody
+		$Turret.texture = shotgunTurret
+		
 
 #When the timer for reload goes out, reset the cooldown to be able to shoot again
 func _on_Reload_timeout():
@@ -114,11 +130,6 @@ func get_power_up(var_type):
 	if(var_type == "hearts"):
 		hearts = max_hearts
 		emit_signal("hit", hearts + 1, max_hearts + 1)
-
-
-func set_default_stats():
-	set_class_type(type_of_tank)
-
 
 func _on_invincibility_timeout():
 	isInvincible = false
@@ -137,4 +148,3 @@ func _on_blink_on_timeout():
 		$blinkOff.start()
 	else:
 		isBlink = false
-

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6d3e76nh121f"
-path="res://.godot/imported/shotgun (2).png-4f87b2176f018fc5251c8280a45b7935.ctex"
+uid="uid://xyijeuf3dh2c"
+path="res://.godot/imported/sniperturret.png-d0be22dadecdbd57434fc002342cb26d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/shotgun (2).png"
-dest_files=["res://.godot/imported/shotgun (2).png-4f87b2176f018fc5251c8280a45b7935.ctex"]
+source_file="res://Assets/Images/sniperturret.png"
+dest_files=["res://.godot/imported/sniperturret.png-d0be22dadecdbd57434fc002342cb26d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xyijeuf3dh2c"
-path="res://.godot/imported/sniperturret.png-02cc2ce53eaf04fd46fd5501b4b75e79.ctex"
+uid="uid://v0l2gy3koi03"
+path="res://.godot/imported/exitbtn.png-183e70bd0693d5ea9f7a6be5989a3633.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Env/sniperturret.png"
-dest_files=["res://.godot/imported/sniperturret.png-02cc2ce53eaf04fd46fd5501b4b75e79.ctex"]
+source_file="res://Assets/Images/exitbtn.png"
+dest_files=["res://.godot/imported/exitbtn.png-183e70bd0693d5ea9f7a6be5989a3633.ctex"]
 
 [params]
 

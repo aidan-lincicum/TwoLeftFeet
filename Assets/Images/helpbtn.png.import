@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1r8hg8x7ad5k"
-path="res://.godot/imported/sniperbody copy.png-5314726c4347429bfef385091ef364f1.ctex"
+uid="uid://ctxngwqitwahp"
+path="res://.godot/imported/helpbtn.png-9118b4ed3aab67ae25fad5d2a936b879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Env/sniperbody copy.png"
-dest_files=["res://.godot/imported/sniperbody copy.png-5314726c4347429bfef385091ef364f1.ctex"]
+source_file="res://Assets/Images/helpbtn.png"
+dest_files=["res://.godot/imported/helpbtn.png-9118b4ed3aab67ae25fad5d2a936b879.ctex"]
 
 [params]
 
