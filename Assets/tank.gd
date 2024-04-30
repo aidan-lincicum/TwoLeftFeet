@@ -102,8 +102,7 @@ func set_class_type(type):
 		rotation_speed = -0.05
 		$Body.texture = riflerBody
 		$Turret.texture = riflerTurret
-		riflerBody.scale *= 50
-		
+				
 	elif(type == "Shotgun"):
 		type_of_tank = "Shotgun"
 		max_hearts = 100
