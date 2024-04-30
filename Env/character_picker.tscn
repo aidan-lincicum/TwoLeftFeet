@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://biytmmx1emkm4"]
 
 [ext_resource type="Script" path="res://Env/character_picker.gd" id="1_pd3sk"]
-[ext_resource type="Texture2D" uid="uid://6fgia6p7vt87" path="res://Env/pickerBG.png" id="1_pdf6l"]
-[ext_resource type="Texture2D" uid="uid://bcvpvnso3rjas" path="res://Env/pickyourcharacter.png" id="2_l4opm"]
-[ext_resource type="Texture2D" uid="uid://71lscrti1qeg" path="res://Env/playerpicktitle.png" id="3_lb8r1"]
-[ext_resource type="Texture2D" uid="uid://dmfgq4bx6n6v7" path="res://Env/readybtn.png" id="4_6sqdh"]
-[ext_resource type="Texture2D" uid="uid://saa12ea4c0wn" path="res://Env/left_arrow.png" id="4_xnwp6"]
-[ext_resource type="Texture2D" uid="uid://bg0gedspxfww5" path="res://Env/right_arrow.png" id="5_ad0oo"]
+[ext_resource type="Texture2D" uid="uid://6fgia6p7vt87" path="res://Assets/Images/pickerBG.png" id="1_pdf6l"]
+[ext_resource type="Texture2D" uid="uid://bcvpvnso3rjas" path="res://Assets/Images/pickyourcharacter.png" id="2_l4opm"]
+[ext_resource type="Texture2D" uid="uid://71lscrti1qeg" path="res://Assets/Images/playerpicktitle.png" id="3_lb8r1"]
+[ext_resource type="Texture2D" uid="uid://dmfgq4bx6n6v7" path="res://Assets/Images/readybtn.png" id="4_6sqdh"]
+[ext_resource type="Texture2D" uid="uid://saa12ea4c0wn" path="res://Assets/Images/left_arrow.png" id="4_xnwp6"]
+[ext_resource type="Texture2D" uid="uid://bg0gedspxfww5" path="res://Assets/Images/right_arrow.png" id="5_ad0oo"]
 [ext_resource type="Texture2D" uid="uid://bpewagr6t3bwi" path="res://Env/rifler1.png" id="6_god57"]
 [ext_resource type="Texture2D" uid="uid://bjxwinvjvaalt" path="res://Env/sniper2.png" id="8_a8dmb"]
 
