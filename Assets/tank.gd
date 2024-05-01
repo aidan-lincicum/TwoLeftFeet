@@ -108,10 +108,10 @@ func set_class_type(type):
 		type_of_tank = "Shotgun"
 		max_hearts = 100
 		hearts = max_hearts
-		$Reload.wait_time = 1.5
+		$Reload.wait_time = 2
 		speed = 1700
 		bullet_speed = 1000
-		bullet_damage = 20
+		bullet_damage = 12.5
 		rotation_speed = -0.08
 		$Body.texture = shotgunBody
 		$Turret.texture = shotgunTurret
