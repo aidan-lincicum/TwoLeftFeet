@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://m7dymc44kg26"]
+
+[ext_resource type="Script" path="res://Env/character_picker_host.gd" id="1_drxnf"]
+[ext_resource type="Texture2D" uid="uid://6fgia6p7vt87" path="res://Env/pickerBG.png" id="2_1ro8h"]
+[ext_resource type="Texture2D" uid="uid://bcvpvnso3rjas" path="res://Env/pickyourcharacter.png" id="3_rdr14"]
+[ext_resource type="Texture2D" uid="uid://71lscrti1qeg" path="res://Env/playerpicktitle.png" id="4_82peb"]
+[ext_resource type="Texture2D" uid="uid://saa12ea4c0wn" path="res://Env/left_arrow.png" id="5_avv7e"]
+[ext_resource type="Texture2D" uid="uid://bpewagr6t3bwi" path="res://Env/rifler1.png" id="6_7xse0"]
+[ext_resource type="Texture2D" uid="uid://bg0gedspxfww5" path="res://Env/right_arrow.png" id="7_l2lax"]
+[ext_resource type="Texture2D" uid="uid://dmfgq4bx6n6v7" path="res://Env/readybtn.png" id="9_gl3um"]
+
+[node name="CharacterPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_drxnf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ro8h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="pickyourclass" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rdr14")
+
+[node name="pickerui" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_82peb")
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+
+[node name="left1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("5_avv7e")
+flat = true
+
+[node name="p1Description" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("6_7xse0")
+
+[node name="right1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("7_l2lax")
+flat = true
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 2.08165e-12)
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ready1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("9_gl3um")
+flat = true
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/left1" to="." method="_on_left_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/right1" to="." method="_on_right_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ready1" to="." method="_on_ready_1_pressed"]

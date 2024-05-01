@@ -1,5 +1,6 @@
 extends Node2D
 
+var peer = ENetMultiplayerPeer.new()
 @export var power_up: PackedScene
 
 var power_timer_is_running = false
@@ -17,7 +18,18 @@ func _process(_delta):
 		makeTimer(7)
 
 func _ready():
+	peer.create_server(420)
+	multiplayer.multiplayer_peer = peer
+	multiplayer.peer_connected.connect(_add_player)
+	_add_player()
+	set_player_classes("Rifler", "Rifler")
+	
 	makeTimer(7)
+	
+func _add_player(id = 1):
+	var player = $Player2
+	player.name = str(id)
+	call_deferred("add_child", player)
 
 func makeTimer(amount_time):
 	$powerUpTimer.wait_time = amount_time

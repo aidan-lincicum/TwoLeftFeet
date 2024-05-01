@@ -13,6 +13,24 @@ func _on_start_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+func _on_host_pressed():	
+	var root_node = get_tree().root
+	var scene_node = root_node.get_node("start_screen")
+	scene_node.queue_free()
+	
+	var new_scene = load("res://Env/character_picker_host.tscn").instantiate()
+	root_node.add_child(new_scene)
+	
+func _add_player(id = 1):
+	pass
+	
+func _on_join_pressed():
+	var root_node = get_tree().root
+	var scene_node = root_node.get_node("start_screen")
+	scene_node.queue_free()
+	
+	var new_scene = load("res://Env/character_picker_join.tscn").instantiate()
+	root_node.add_child(new_scene)
 
 func _on_help_pressed():
 	var root_node = get_tree().root
