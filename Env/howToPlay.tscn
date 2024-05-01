@@ -1,8 +1,216 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy0emqjcr3b0i"]
+[gd_scene load_steps=55 format=3 uid="uid://cy0emqjcr3b0i"]
 
-[ext_resource type="Texture2D" uid="uid://hrudcattuyj8" path="res://Env/howToPlaybG.png" id="1_n47ig"]
 [ext_resource type="Script" path="res://Env/howToPlay.gd" id="1_xdq0x"]
-[ext_resource type="Texture2D" uid="uid://v0l2gy3koi03" path="res://Env/exitbtn.png" id="2_4kpcu"]
+[ext_resource type="Texture2D" uid="uid://v0l2gy3koi03" path="res://Assets/Images/exitbtn.png" id="2_4kpcu"]
+[ext_resource type="Texture2D" uid="uid://d3r75vj7v6pak" path="res://Assets/Images/howtoplayanimated/ezgif-frame-041.png" id="2_x1nn0"]
+[ext_resource type="Script" path="res://Env/AnimatedTextureRect.gd" id="3_d22mv"]
+[ext_resource type="Texture2D" uid="uid://b7ngeanfuh1gd" path="res://Assets/Images/howtoplayanimated/ezgif-frame-001.png" id="4_3mwwu"]
+[ext_resource type="Texture2D" uid="uid://b7kjk5xjhresg" path="res://Assets/Images/howtoplayanimated/ezgif-frame-002.png" id="5_fs3ba"]
+[ext_resource type="Texture2D" uid="uid://brqc234omoivb" path="res://Assets/Images/howtoplayanimated/ezgif-frame-003.png" id="6_3ai43"]
+[ext_resource type="Texture2D" uid="uid://be3jd0qoy786r" path="res://Assets/Images/howtoplayanimated/ezgif-frame-004.png" id="7_ujv6u"]
+[ext_resource type="Texture2D" uid="uid://cmr4m0vj12x7o" path="res://Assets/Images/howtoplayanimated/ezgif-frame-005.png" id="8_exlqn"]
+[ext_resource type="Texture2D" uid="uid://dioqiakparrja" path="res://Assets/Images/howtoplayanimated/ezgif-frame-006.png" id="9_c54gw"]
+[ext_resource type="Texture2D" uid="uid://72x4ymit8uyx" path="res://Assets/Images/howtoplayanimated/ezgif-frame-007.png" id="10_ylsru"]
+[ext_resource type="Texture2D" uid="uid://bs1bv3lynkafn" path="res://Assets/Images/howtoplayanimated/ezgif-frame-008.png" id="11_44hkq"]
+[ext_resource type="Texture2D" uid="uid://bcin38jfjne7k" path="res://Assets/Images/howtoplayanimated/ezgif-frame-009.png" id="12_lixur"]
+[ext_resource type="Texture2D" uid="uid://bpso72autnagu" path="res://Assets/Images/howtoplayanimated/ezgif-frame-010.png" id="13_4747f"]
+[ext_resource type="Texture2D" uid="uid://cwmmdxflx37fn" path="res://Assets/Images/howtoplayanimated/ezgif-frame-011.png" id="14_gvqgd"]
+[ext_resource type="Texture2D" uid="uid://b5m153slfx3sy" path="res://Assets/Images/howtoplayanimated/ezgif-frame-012.png" id="15_v4ek1"]
+[ext_resource type="Texture2D" uid="uid://dfsxsa1m4hjxa" path="res://Assets/Images/howtoplayanimated/ezgif-frame-013.png" id="16_sdlp4"]
+[ext_resource type="Texture2D" uid="uid://b6d7jpilr20hd" path="res://Assets/Images/howtoplayanimated/ezgif-frame-014.png" id="17_6mfjq"]
+[ext_resource type="Texture2D" uid="uid://br0adl5o7txxl" path="res://Assets/Images/howtoplayanimated/ezgif-frame-015.png" id="18_sc1sg"]
+[ext_resource type="Texture2D" uid="uid://bkbauwsdpq2n0" path="res://Assets/Images/howtoplayanimated/ezgif-frame-016.png" id="19_6vpsc"]
+[ext_resource type="Texture2D" uid="uid://chd0g4g1j5o3h" path="res://Assets/Images/howtoplayanimated/ezgif-frame-017.png" id="20_vdh48"]
+[ext_resource type="Texture2D" uid="uid://bu8enlsudggm6" path="res://Assets/Images/howtoplayanimated/ezgif-frame-018.png" id="21_6abfk"]
+[ext_resource type="Texture2D" uid="uid://w8rojcewi1cv" path="res://Assets/Images/howtoplayanimated/ezgif-frame-019.png" id="22_pxcxp"]
+[ext_resource type="Texture2D" uid="uid://byd7ub6s1xegm" path="res://Assets/Images/howtoplayanimated/ezgif-frame-020.png" id="23_652sx"]
+[ext_resource type="Texture2D" uid="uid://bm2idxk4o0crj" path="res://Assets/Images/howtoplayanimated/ezgif-frame-021.png" id="24_h63mo"]
+[ext_resource type="Texture2D" uid="uid://cyob6bo64xb47" path="res://Assets/Images/howtoplayanimated/ezgif-frame-022.png" id="25_vesut"]
+[ext_resource type="Texture2D" uid="uid://46mk2os1l0t6" path="res://Assets/Images/howtoplayanimated/ezgif-frame-023.png" id="26_vhkva"]
+[ext_resource type="Texture2D" uid="uid://bv2yt3gmj3dmo" path="res://Assets/Images/howtoplayanimated/ezgif-frame-024.png" id="27_tau5r"]
+[ext_resource type="Texture2D" uid="uid://6mbhovykramc" path="res://Assets/Images/howtoplayanimated/ezgif-frame-025.png" id="28_ssokq"]
+[ext_resource type="Texture2D" uid="uid://dh773xps5fkxc" path="res://Assets/Images/howtoplayanimated/ezgif-frame-026.png" id="29_jyhhv"]
+[ext_resource type="Texture2D" uid="uid://djaonwsrqdt7v" path="res://Assets/Images/howtoplayanimated/ezgif-frame-027.png" id="30_etvha"]
+[ext_resource type="Texture2D" uid="uid://cgldblk8i2ib4" path="res://Assets/Images/howtoplayanimated/ezgif-frame-028.png" id="31_q0eey"]
+[ext_resource type="Texture2D" uid="uid://bnt35j1tyimb8" path="res://Assets/Images/howtoplayanimated/ezgif-frame-029.png" id="32_8iq2t"]
+[ext_resource type="Texture2D" uid="uid://djqr8gp6n7u17" path="res://Assets/Images/howtoplayanimated/ezgif-frame-030.png" id="33_hlkjp"]
+[ext_resource type="Texture2D" uid="uid://dph3875deerng" path="res://Assets/Images/howtoplayanimated/ezgif-frame-031.png" id="34_gbovs"]
+[ext_resource type="Texture2D" uid="uid://dxooslteww3lg" path="res://Assets/Images/howtoplayanimated/ezgif-frame-032.png" id="35_e6w5e"]
+[ext_resource type="Texture2D" uid="uid://diavav0bptrjg" path="res://Assets/Images/howtoplayanimated/ezgif-frame-033.png" id="36_hvlrw"]
+[ext_resource type="Texture2D" uid="uid://kbbfqy5vnqpn" path="res://Assets/Images/howtoplayanimated/ezgif-frame-034.png" id="37_vj4b1"]
+[ext_resource type="Texture2D" uid="uid://xkaw261qi6o7" path="res://Assets/Images/howtoplayanimated/ezgif-frame-035.png" id="38_3bsdp"]
+[ext_resource type="Texture2D" uid="uid://bwno48jw7aj3p" path="res://Assets/Images/howtoplayanimated/ezgif-frame-036.png" id="39_wh1m0"]
+[ext_resource type="Texture2D" uid="uid://co5sp7ad2w3um" path="res://Assets/Images/howtoplayanimated/ezgif-frame-037.png" id="40_g0ud0"]
+[ext_resource type="Texture2D" uid="uid://doketm55dlj52" path="res://Assets/Images/howtoplayanimated/ezgif-frame-038.png" id="41_32fcx"]
+[ext_resource type="Texture2D" uid="uid://ffoorjgsua2c" path="res://Assets/Images/howtoplayanimated/ezgif-frame-039.png" id="42_6ehbq"]
+[ext_resource type="Texture2D" uid="uid://bnvu1mjnisolu" path="res://Assets/Images/howtoplayanimated/ezgif-frame-040.png" id="43_5f4vs"]
+[ext_resource type="Texture2D" uid="uid://brbjc1himcgqx" path="res://Assets/Images/howtoplayanimated/ezgif-frame-042.png" id="44_eilhm"]
+[ext_resource type="Texture2D" uid="uid://dbuu1armhj4y4" path="res://Assets/Images/howtoplayanimated/ezgif-frame-043.png" id="45_0yi6p"]
+[ext_resource type="Texture2D" uid="uid://22ek812ca0uo" path="res://Assets/Images/howtoplayanimated/ezgif-frame-044.png" id="46_0fh66"]
+[ext_resource type="Texture2D" uid="uid://ddbhfgw3mdk2i" path="res://Assets/Images/howtoplayanimated/ezgif-frame-045.png" id="47_o4epj"]
+[ext_resource type="Texture2D" uid="uid://b3l7m6jbh6uaq" path="res://Assets/Images/howtoplayanimated/ezgif-frame-046.png" id="48_tndpe"]
+[ext_resource type="Texture2D" uid="uid://ccwqqu0nmoamr" path="res://Assets/Images/howtoplayanimated/ezgif-frame-047.png" id="49_nca0b"]
+[ext_resource type="Texture2D" uid="uid://bpvhos5tfhalr" path="res://Assets/Images/howtoplayanimated/ezgif-frame-048.png" id="50_2tnj8"]
+[ext_resource type="Texture2D" uid="uid://cruivxew6d7ak" path="res://Assets/Images/howtoplayanimated/ezgif-frame-049.png" id="51_68ok0"]
+[ext_resource type="Texture2D" uid="uid://de2ulegrnjpxh" path="res://Assets/Images/howtoplayanimated/ezgif-frame-050.png" id="52_o80lk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsn2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3mwwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fs3ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ai43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ujv6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_exlqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c54gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ylsru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_44hkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lixur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4747f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gvqgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v4ek1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sdlp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6mfjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sc1sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6vpsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vdh48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6abfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pxcxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_652sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_h63mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vesut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vhkva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_tau5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ssokq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jyhhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_etvha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_q0eey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8iq2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_hlkjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gbovs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_e6w5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hvlrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vj4b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_3bsdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_wh1m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_g0ud0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_32fcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6ehbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5f4vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x1nn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_eilhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_0yi6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0fh66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o4epj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_tndpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nca0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2tnj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_68ok0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_o80lk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
@@ -13,11 +221,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xdq0x")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="AnimatedTextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_n47ig")
+texture = ExtResource("2_x1nn0")
+script = ExtResource("3_d22mv")
+sprites = SubResource("SpriteFrames_tsn2e")
+autoplay = true
+Animation = "default"
+Frame = 0
+"Speed Scale" = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
