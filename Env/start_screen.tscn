@@ -262,7 +262,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"character_picker",
-"speed": 30.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -417,7 +417,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"start",
-"speed": 30.0
+"speed": 2.0
 }]
 
 [node name="start_screen" type="Control"]
@@ -433,13 +433,13 @@ script = ExtResource("1_k00mf")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1065.0
-texture = ExtResource("52_lxilp")
+texture = ExtResource("3_2leff")
 script = ExtResource("3_2a2ax")
 sprites = SubResource("SpriteFrames_q8tg7")
 autoplay = true
 Animation = "start"
-Frame = 49
-"Speed Scale" = 0.5
+Frame = 0
+"Speed Scale" = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -267,7 +267,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"character_picker",
-"speed": 30.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -422,7 +422,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"start",
-"speed": 30.0
+"speed": 10.0
 }]
 
 [node name="CharacterPicker" type="Control"]
