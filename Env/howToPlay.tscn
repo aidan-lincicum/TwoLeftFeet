@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy0emqjcr3b0i"]
 
-[ext_resource type="Texture2D" uid="uid://hrudcattuyj8" path="res://Env/howToPlaybG.png" id="1_n47ig"]
+[ext_resource type="Texture2D" uid="uid://hrudcattuyj8" path="res://Assets/Images/howToPlaybG.png" id="1_n47ig"]
 [ext_resource type="Script" path="res://Env/howToPlay.gd" id="1_xdq0x"]
-[ext_resource type="Texture2D" uid="uid://v0l2gy3koi03" path="res://Env/exitbtn.png" id="2_4kpcu"]
+[ext_resource type="Texture2D" uid="uid://v0l2gy3koi03" path="res://Assets/Images/exitbtn.png" id="2_4kpcu"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3

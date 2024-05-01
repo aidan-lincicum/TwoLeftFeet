@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dk3s18ts5q54n"]
 
-[ext_resource type="Texture2D" uid="uid://c3r0sfe0uudv8" path="res://Env/restartBG.png" id="1_a8ydk"]
+[ext_resource type="Texture2D" uid="uid://c3r0sfe0uudv8" path="res://Assets/Images/restartBG.png" id="1_a8ydk"]
 [ext_resource type="Script" path="res://Env/start_screen.gd" id="1_k00mf"]
-[ext_resource type="Texture2D" uid="uid://chhflu1qi6nx0" path="res://Env/gametitle.png" id="2_sm2fe"]
-[ext_resource type="Texture2D" uid="uid://lindnwnkm73t" path="res://Env/startbtn.png" id="3_8exwv"]
-[ext_resource type="Texture2D" uid="uid://d2vghdyjsynb4" path="res://Env/quitbtn.png" id="4_7cx1t"]
-[ext_resource type="Texture2D" uid="uid://ctxngwqitwahp" path="res://Env/helpbtn.png" id="6_e2pn5"]
+[ext_resource type="Texture2D" uid="uid://chhflu1qi6nx0" path="res://Assets/Images/gametitle.png" id="2_sm2fe"]
+[ext_resource type="Texture2D" uid="uid://lindnwnkm73t" path="res://Assets/Images/startbtn.png" id="3_8exwv"]
+[ext_resource type="Texture2D" uid="uid://d2vghdyjsynb4" path="res://Assets/Images/quitbtn.png" id="4_7cx1t"]
+[ext_resource type="Texture2D" uid="uid://ctxngwqitwahp" path="res://Assets/Images/helpbtn.png" id="6_e2pn5"]
 
 [node name="start_screen" type="Control"]
 layout_mode = 3
