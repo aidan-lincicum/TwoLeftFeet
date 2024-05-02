@@ -14,19 +14,12 @@ size = Vector2(89, 91)
 collision_layer = 2
 collision_mask = 7
 wall_min_slide_angle = 3.14159
-platform_floor_layers = 4294901760
 script = ExtResource("2_vcypm")
 rotation_speed = -0.05
 bullet = ExtResource("3_bw4m8")
 turret_cd = 0.5
 
-[node name="Body" parent="." index="0"]
-clip_children = 2
-position = Vector2(0, -3.12924e-06)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_oa7bn")
-
-[node name="Turret" parent="." index="1"]
+[node name="Turret" parent="." index="0"]
 position = Vector2(1.99303, 0.00107653)
 scale = Vector2(0.0656669, 0.0450415)
 texture = ExtResource("5_dbj1t")
@@ -34,6 +27,12 @@ offset = Vector2(1500, 2.08165e-12)
 
 [node name="Gun" parent="Turret" index="0"]
 position = Vector2(3137.15, -2.49436)
+
+[node name="Body" parent="." index="1"]
+clip_children = 2
+position = Vector2(0, -3.12924e-06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_oa7bn")
 
 [node name="Collision" parent="." index="2"]
 position = Vector2(-1, 0)

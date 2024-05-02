@@ -430,6 +430,7 @@ grow_vertical = 2
 script = ExtResource("1_bg61h")
 
 [node name="AnimatedTextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_ek1e8")
