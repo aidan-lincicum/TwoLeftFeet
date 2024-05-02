@@ -11,13 +11,16 @@
 <br />
 <div align="center">
   <a href="https://github.com/aidan-lincicum/TwoLeftFeet">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Assets/Images/gametitle.png" alt="Logo">
   </a>
 
-<h3 align="center">Two Left Feet</h3>
+<h3 align="center"></h3>
 
   <p align="center">
+    COMP 225
+    <br />
     Software Design and Development
+    <br />
     <br />
     <a href="https://github.com/aidan-lincicum/TwoLeftFeet"><strong>Explore the docs »</strong></a>
     <br />
