@@ -10,11 +10,11 @@ platform_floor_layers = 4294901760
 script = ExtResource("1_b21hq")
 speed = 100
 
-[node name="Body" type="Sprite2D" parent="."]
-
 [node name="Turret" type="Sprite2D" parent="."]
 
 [node name="Gun" type="Marker2D" parent="Turret"]
+
+[node name="Body" type="Sprite2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 light_mask = 2
