@@ -14,6 +14,8 @@ var riflerDescription2 = preload("res://Assets/Images/rifler2.png")
 var shotgunDescription2 = preload("res://Assets/Images/shotgun2.png")
 var sniperDescription2 = preload("res://Assets/Images/sniper2.png")
 
+var new_scene = preload("res://Env/env.tscn")
+
 #Changes scene when both p1 and p2 are ready
 func _process(_delta):
 	if(p1Ready && p2Ready):
@@ -21,9 +23,9 @@ func _process(_delta):
 		var scene_node = root_node.get_node("CharacterPicker")
 		scene_node.queue_free()
 
-		var new_scene = load("res://Env/env.tscn").instantiate()
-		new_scene.set_player_classes(classArray[p1Pointer], classArray[p2Pointer])
-		root_node.add_child(new_scene)
+		var new_scene_instance = new_scene.instantiate()
+		new_scene_instance.set_player_classes(classArray[p1Pointer], classArray[p2Pointer])
+		root_node.add_child(new_scene_instance)
 
 #Toggles player1 between ready and not ready states
 func _on_ready_1_pressed():
