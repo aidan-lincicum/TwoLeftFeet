@@ -2,7 +2,6 @@ extends Node2D
 
 @export var power_up: PackedScene
 
-var power_timer_is_running = false
 var rng = RandomNumberGenerator.new()
 var power_up_x_position
 var power_up_y_position
@@ -12,16 +11,8 @@ func _on_Tank_shoot(bullet, _position, _direction,_speed,_damage,_type_of_tank):
 	add_child(b)
 	b.start(_position, _direction,_speed,_damage,_type_of_tank)
 
-func _process(_delta):
-	if(!power_timer_is_running):
-		makeTimer(7)
-
 func _ready():
-	makeTimer(7)
-
-func makeTimer(amount_time):
-	$powerUpTimer.wait_time = amount_time
-	power_timer_is_running = true
+	$powerUpTimer.wait_time = 10
 
 func spawn_power_up():
 	var power_up_instance = power_up.instantiate()
@@ -32,7 +23,7 @@ func spawn_power_up():
 
 func _on_power_up_timer_timeout():
 	spawn_power_up()
-	power_timer_is_running = false
+	$powerUpTimer.wait_time = 10
 
 func set_player_classes(player1, player2):
 	$Player1.set_class_type(player1)

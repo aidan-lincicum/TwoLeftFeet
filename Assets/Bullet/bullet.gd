@@ -26,7 +26,6 @@ func on_despawn_timeout():
 
 func _process(delta):
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-	
 	if collision:
 		var collider = collision.get_collider()
 		if collider.get("name").begins_with("p_bullet"):
@@ -36,7 +35,7 @@ func _process(delta):
 			explode()
 			hit(collider)
 		elif collider.get("name").begins_with("Static"):
-			num_bounces = num_bounces + 1
+			num_bounces += 1
 			if(num_bounces < 3 && type_of_tank == "Sniper"):
 				ricochet(collision)
 			else:
@@ -49,7 +48,7 @@ func ricochet(collision):
 	var reflect = collision.get_remainder().bounce(collision.get_normal())
 	velocity = velocity.bounce(collision.get_normal())
 	move_and_collide(reflect)
-	
+
 func explode():
 	$Sprite2D.hide()
 	$Trail.hide()

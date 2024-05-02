@@ -11,8 +11,6 @@ func _on_Player2_hit(hearts : float, max_hearts: float):
 		$P2DeathTimer.start()
 		emit_signal('player_dead')
 
-
-
 func _on_p_2_death_timer_timeout():
 	var root_node = get_tree().root
 	var scene_node = root_node.get_node("Env")

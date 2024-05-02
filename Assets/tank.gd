@@ -41,13 +41,13 @@ func shoot():
 		if(type_of_tank == "Rifler" && burst_fire_count < 3):
 			$burstFire.start()
 		if(type_of_tank == "Shotgun"):
-			dir = Vector2(1, 0).rotated($Turret.global_rotation + .5)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation + .125)
 			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
-			dir = Vector2(1, 0).rotated($Turret.global_rotation + .10)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation + .25)
 			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
-			dir = Vector2(1, 0).rotated($Turret.global_rotation - .5)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation - .125)
 			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
-			dir = Vector2(1, 0).rotated($Turret.global_rotation - .10)
+			dir = Vector2(1, 0).rotated($Turret.global_rotation - .25)
 			emit_signal('trigger', bullet, $Turret/Gun.global_position, dir,bullet_speed,bullet_damage,type_of_tank)
 
 
@@ -102,7 +102,6 @@ func set_class_type(type):
 		rotation_speed = -0.05
 		$Body.texture = riflerBody
 		$Turret.texture = riflerTurret
-				
 	elif(type == "Shotgun"):
 		type_of_tank = "Shotgun"
 		max_hearts = 100
@@ -114,7 +113,6 @@ func set_class_type(type):
 		rotation_speed = -0.08
 		$Body.texture = shotgunBody
 		$Turret.texture = shotgunTurret
-		
 
 #When the timer for reload goes out, reset the cooldown to be able to shoot again
 func _on_Reload_timeout():
