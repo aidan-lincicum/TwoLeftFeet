@@ -116,7 +116,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [contributors-url]: https://github.com/aidan-lincicum/TwoLeftFeet/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/aidan-lincicum/TwoLeftFeet/issues
-[license-shield]: https://img.shields.io/github/license/aidan-lincicum/TwoLeftFeet.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/aidan-lincicum/TwoLeftFeet/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
