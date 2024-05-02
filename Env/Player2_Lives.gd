@@ -3,10 +3,10 @@ extends AnimatedSprite2D
 signal player_dead
 
 func _ready():
-	set_frame(11)
+	set_frame(10)
 
 func _on_Player2_hit(hearts : float, max_hearts: float):
-	set_frame(ceil((hearts/max_hearts)*11))
+	set_frame(ceil((hearts/max_hearts)*10))
 	if(hearts <= 0):
 		$P2DeathTimer.start()
 		emit_signal('player_dead')

@@ -93,12 +93,12 @@ func set_class_type(type):
 	elif(type == "Rifler"):
 		type_of_tank = "Rifler"
 		set_burst_fire()
-		max_hearts = 75
+		max_hearts = 80
 		hearts = max_hearts
 		$Reload.wait_time = 1
 		speed = 1200
 		bullet_speed = 1500
-		bullet_damage = 25
+		bullet_damage = 20
 		rotation_speed = -0.05
 		$Body.texture = riflerBody
 		$Turret.texture = riflerTurret
