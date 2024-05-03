@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p float="left">
+<p align="center">
   <img src="Images/gameplay_img.png" width="500" />
   <img src="Images/charselec_img.png" width="500" /> 
 </p>
