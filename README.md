@@ -125,9 +125,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/aidan-lincicum/TwoLeftFeet.svg?style=for-the-badge
 [contributors-url]: https://github.com/aidan-lincicum/TwoLeftFeet/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/aidan-lincicum/TwoLeftFeet.svg?style=for-the-badge
 [issues-url]: https://github.com/aidan-lincicum/TwoLeftFeet/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/aidan-lincicum/TwoLeftFeet/LICENSE.txt
