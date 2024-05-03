@@ -117,8 +117,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Acknowledgments
 
 * [Paul Cantrell](https://www.macalester.edu/mscs/facultystaff/paulcantrell/)
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
